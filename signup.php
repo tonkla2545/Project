@@ -40,7 +40,7 @@
                             <div class="card shadow-2-strong bg-info" style="border-radius: 1rem;">
                                 <div class="card-body p-5 text-center">
 
-                                    <h3 class="mb-5">เข้าสู่ระบบ</h3>
+                                    <h3 class="mb-5">สมัครสมาชิก</h3>
 
                                     <div class="form-outline mb-2">
                                         <input type="text" name="firstname" class="form-control form-control-lg" placeholder="Firstname">

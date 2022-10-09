@@ -54,10 +54,18 @@
                   </form>
               </section>
 
-              <div class="d-grid gap-2 d-md-flex">
+              <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                 <div class="text-end">
-                    <button type="button" class="btn btn-outline-dark me-2" ><a href="login.php">Login</a></button>
-                    <button type="button" class="btn btn-dark"><a href="signup.php">Sign-up</a></button>
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                            username
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                            <li><a class="dropdown-item" href="Profile">บัญชีของฉัน</a></li>
+                            <li><a class="dropdown-item" href="order_h">ประวัติการเช่า</a></li>
+                            <li><a class="dropdown-item" href="#">ออกจากระบบ</a></li>
+                        </ul>
+                    </div>
                 </div>
               </div>
           </div> 
