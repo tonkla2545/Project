@@ -19,7 +19,7 @@
 <!-- <header class="p-3 text-bg-info"> -->
   <header class="navbar navbar-expand-lg navbar-light bg-info">
       <div class="container px-4 px-lg-5">
-          <a class="navbar-brand" href="#!">Start Bootstrap</a>
+          <a class="navbar-brand" href="index.php">Start Bootstrap</a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler">
               <span class="navbar-toggler-icon"></span>
           </button> 
@@ -56,14 +56,14 @@
 
               <div class="text-end">
                   <button type="button" class="btn btn-outline-dark me-2" ><a href="login.php">Login</a></button>
-                  <button type="button" class="btn btn-dark">Sign-up</button>
+                  <button type="button" class="btn btn-dark"><a href="signup.php">Sign-up</a></button>
               </div>
           </div> 
       </div>
     </div>
   </header>
 
-<!-- Section-->
+<!-- ตะกร้า -->
   <div class="container px-4 px-lg-5 mt-5 ">
       <div class="d-grid gap-2 d-md-flex justify-content-md-end">
           <button class="btn btn-outline-dark" type="submit">
@@ -75,10 +75,12 @@
           </button>
       </div>
   </div>
+  <!-- หน้าสินค้า -->
   <section class="py-5">
       <div class="container px-4 px-lg-5 mt-1">
           <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content">
-              <?php for($i=1;$i<=16;$i++){
+              <?php 
+                for($i=1;$i<=16;$i++){
               ?>
               <div class="col mb-5">
                   <div class="card h-100">
@@ -115,15 +117,6 @@
               </div>
           </div>
       </div>
-        <!-- <div class="container">
-          <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4">
-            <ul class="nav col-md-4 justify-content-end list-unstyled d-flex ms-auto">
-              <li class="ms-3"><a class="text-muted" href="#">1<svg class="bi" width="6" height="6"><use xlink:href="#twitter"></use></svg></a></li>
-              <li class="ms-3"><a class="text-muted" href="#">2<svg class="bi" width="6" height="6"><use xlink:href="#instagram"></use></svg></a></li>
-              <li class="ms-3"><a class="text-muted" href="#">3<svg class="bi" width="6" height="6"><use xlink:href="#facebook"></use></svg></a></li>
-            </ul>
-          </footer>
-        </div> -->
   </section>
 
 
@@ -134,7 +127,7 @@
       <h4>หมวดหมู่</h4>
     </div>
       
-    <!-- </footer> -->
+    <!-- หมวดหมู่  -->
     <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5 py-2 my-2">
       <div class="col mb-3">
         <h5>เสื้อผ้าผู้ชาย</h5>
