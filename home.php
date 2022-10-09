@@ -16,7 +16,7 @@
 </head>
 <body>
 
-<!-- <header class="p-3 text-bg-info"> -->
+<!-- <navbar"> -->
   <header class="navbar navbar-expand-lg navbar-light bg-info">
       <div class="container px-4 px-lg-5">
           <a class="navbar-brand" href="index.php">Start Bootstrap</a>
@@ -30,7 +30,7 @@
               </ul>
 
               <section class="w-50 p-1 pb-1 d-flex justify-content-center align-items-center flex-column me-lg-auto mb-2 justify-content-center mb-md-0">
-              <!-- <form class="nav col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3 me-lg-auto mb-2 justify-content-center mb-md-0" role="search"> -->
+
                   <form class="input-group " role="search">
                   <input type="search" class="form-control form-control-white text-bg-white " placeholder="Search..." aria-label="Search">
                   <button type="button" class="btn btn-primary">
@@ -61,8 +61,8 @@
                             username
                         </button>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                            <li><a class="dropdown-item" href="Profile">บัญชีของฉัน</a></li>
-                            <li><a class="dropdown-item" href="order_h">ประวัติการเช่า</a></li>
+                            <li><a class="dropdown-item" href="profile">บัญชีของฉัน</a></li>
+                            <li><a class="dropdown-item" href="order-h">ประวัติการเช่า</a></li>
                             <li><a class="dropdown-item" href="#">ออกจากระบบ</a></li>
                         </ul>
                     </div>
@@ -109,7 +109,7 @@
                       </div>
                       <!-- Product actions-->
                       <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                          <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a></div>
+                          <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="shop-item.php">Add to cart</a></div>
                       </div>
                   </div>
               </div>
