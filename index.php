@@ -120,7 +120,7 @@ include('server.php');
                         </button>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                             <li><a class="dropdown-item" href="profile.php">บัญชีของฉัน</a></li>
-                            <li><a class="dropdown-item" href="order-h.php">ประวัติการเช่า</a></li>
+                            <li><a class="dropdown-item" href="#">ประวัติการเช่า</a></li>
                             <li><a class="dropdown-item" href="#">ออกจากระบบ</a></li>
                         </ul>
                     </div>
@@ -158,7 +158,7 @@ include('server.php');
                   <div class="card h-100">
                       <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>
                       <!-- Product image-->
-                      <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
+                      <a href="shop-item.php"><img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." /></a>
                       <!-- Product details-->
                       <div class="card-body p-4">
                           <div class="text-center">
@@ -171,7 +171,7 @@ include('server.php');
                       </div>
                       <!-- Product actions-->
                       <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                          <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="shop-item.php">Add to cart</a></div>
+                          <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="shop-item.php">ดูสินค้า</a></div>
                       </div>
                   </div>
               </div>

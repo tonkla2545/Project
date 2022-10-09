@@ -119,7 +119,7 @@ include('server.php');
                         </button>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                             <li><a class="dropdown-item" href="profile.php">บัญชีของฉัน</a></li>
-                            <li><a class="dropdown-item" href="order-h.php">ประวัติการเช่า</a></li>
+                            <li><a class="dropdown-item" href="#">ประวัติการเช่า</a></li>
                             <li><a class="dropdown-item" href="#">ออกจากระบบ</a></li>
                         </ul>
                     </div>
