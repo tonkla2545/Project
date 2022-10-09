@@ -123,13 +123,13 @@ include('server.php');
               <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                 <div class="text-end">
                     <div class="dropdown">
-                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                        <button class="btn btn-outline-dark dropdown-toggle " type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                             username
                         </button>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                             <li><a class="dropdown-item" href="profile.php">บัญชีของฉัน</a></li>
                             <li><a class="dropdown-item" href="#">ประวัติการเช่า</a></li>
-                            <li><a class="dropdown-item" href="#">ออกจากระบบ</a></li>
+                            <li><a class="dropdown-item" href="index.php">ออกจากระบบ</a></li>
                         </ul>
                     </div>
                 </div>

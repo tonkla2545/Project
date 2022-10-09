@@ -166,10 +166,46 @@ include('server.php');
                     </div>
                     <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium at dolorem quidem modi. Nam sequi consequatur obcaecati excepturi alias magni, accusamus eius blanditiis delectus ipsam minima ea iste laborum vero?</p>
                     <div class="d-flex">
-                        <input class="form-control text-center me-3" id="inputQuantity" type="num" value="1" style="max-width: 3rem" />
+                        <div class="col-md-3 col-lg-3 col-xl-3 d-flex ">
+                            <p class="mt-2 mb-auto">ตัวเลื่อกเพิ่มเติม</p>
+                        </div>
+                        <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content">
+                            <?php
+                                for($i=1;$i<=6;$i++){
+                            ?>
+                                <div class="col form-check me-2 mb-3">
+                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                                    <label class="form-check-label" for="flexRadioDefault1">ไซต์ 38</label>
+                                </div>
+                            <?php
+                                }
+                            ?>
+                        </div>
+                    </div>
+                    <div class="d-flex mt-3 ">
+                        <div class="col-md-3 col-lg-3 col-xl-3 d-flex ">
+                            <p class="mt-2 mb-auto">จำนวน</p>
+                        </div>
+                        <div class="col-md-3 col-lg-3 col-xl-3 d-flex">
+                            <button class="btn btn-link px-2" onclick="this.parentNode.querySelector('input[type=number]').stepDown()" style="">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-dash" viewBox="0 0 16 16">
+                                <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z"/>
+                            </svg>
+                            </button>
+
+                            <input id="form1" min="0" name="quantity" value="1" type="number" class="form-control form-control-sm">
+
+                            <button class="btn btn-link px-2" onclick="this.parentNode.querySelector('input[type=number]').stepUp()" style="">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
+                                <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                            </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="d-flex mt-5">
                         <button class="btn btn-outline-dark flex-shrink-0" type="button">
                             <i class="bi-cart-fill me-1"></i>
-                            Add to cart
+                            เพิ่มในตะกร้า
                         </button>
                     </div>
                 </div>
