@@ -1,6 +1,6 @@
 <?php
 
-include('server.php');
+include('../server.php');
 
 ?>
 <!DOCTYPE html>
@@ -19,13 +19,13 @@ include('server.php');
 <body>
     <header class="navbar navbar-expand-lg navbar-light bg-info">
         <div class="container px-4 px-lg-5">
-            <a class="navbar-brand" href="index.php">Start Bootstrap</a>
+            <a class="navbar-brand" href="../index.php">Start Bootstrap</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler">
                 <span class="navbar-toggler-icon"></span>
             </button> 
             <div class="collapse navbar-collapse" id="navbarToggler"> 
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
-                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.php">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="../index.php">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="#!">About</a></li>
                 </ul>
             </div> 
@@ -42,27 +42,7 @@ include('server.php');
                             <div class="card shadow-2-strong bg-info" style="border-radius: 1rem;">
                                 <div class="card-body p-5 text-center">
 
-                                    <h3 class="mb-5">สมัครสมาชิก</h3>
-
-                                    <div class="form-outline mb-2">
-                                        <input type="text" name="firstname" class="form-control form-control-lg" placeholder="Firstname">
-                                        <label class="form-label" for="firstname" style="margin-left: 0px;" ></label>
-                                        <div class="form-notch">
-                                            <div class="form-notch-leading" style="width: 9px;"></div>
-                                            <div class="form-notch-middle" style="width: 40px;"></div>
-                                            <div class="form-notch-trailing"></div>
-                                        </div>
-                                    </div>
-
-                                    <div class="form-outline mb-2">
-                                    <input type="text" name="lastname" class="form-control form-control-lg" placeholder="Lasttname">
-                                        <label class="form-label" for="lastname" style="margin-left: 0px;" ></label>
-                                        <div class="form-notch">
-                                            <div class="form-notch-leading" style="width: 9px;"></div>
-                                            <div class="form-notch-middle" style="width: 40px;"></div>
-                                            <div class="form-notch-trailing"></div>
-                                        </div>
-                                    </div>
+                                    <h3 class="mb-5">เข้าสู่ระบบ</h3>
 
                                     <div class="form-outline mb-2">
                                         <input type="email" id="typeEmailX-2" class="form-control form-control-lg" placeholder="Email">
@@ -75,8 +55,8 @@ include('server.php');
                                     </div>
 
                                     <div class="form-outline mb-2">
-                                        <input type="password" name="password" class="form-control form-control-lg" placeholder="รหัสผ่าน">
-                                        <label class="form-label" for="password" style="margin-left: 0px;"></label>
+                                        <input type="password" id="typePasswordX-2" class="form-control form-control-lg" placeholder="รหัสผ่าน">
+                                        <label class="form-label" for="password" name="password" style="margin-left: 0px;"></label>
                                         <div class="form-notch">
                                             <div class="form-notch-leading" style="width: 9px;"></div>
                                             <div class="form-notch-middle" style="width: 64.8px;"></div>
@@ -84,20 +64,16 @@ include('server.php');
                                         </div>
                                     </div>
 
-                                    <div class="form-outline mb-2">
-                                        <input type="password" name="c_password" class="form-control form-control-lg" placeholder="ยืนยันรหัสผ่าน">
-                                        <label class="form-label" for="confiem password" style="margin-left: 0px;"></label>
-                                        <div class="form-notch">
-                                            <div class="form-notch-leading" style="width: 9px;"></div>
-                                            <div class="form-notch-middle" style="width: 64.8px;"></div>
-                                            <div class="form-notch-trailing"></div>
-                                        </div>
+                                    <!-- Checkbox -->
+                                    <div class="form-check d-flex justify-content-start mb-4">
+                                        <input class="form-check-input" type="checkbox" value="" id="form1Example3">
+                                        <label class="form-check-label" for="form1Example3"> จดจำรหัสผ่าน </label>
                                     </div>
 
-                                    <button class="btn btn-primary btn-lg btn-block" type="submit">สมัครสมาชิก</button>
+                                    <button class="btn btn-primary btn-lg btn-block" type="submit">เข้าสู่ระบบ</button>
 
                                     <hr class="my-4">
-                                    <p>เป็นสมาชิกแล้วใช่ไหม คลื๊กที่นึ้เพื่อเข้าสู่ระบบ <a href="login.php">เข้าสู่ระบบ</a></p>
+                                    <p>ยังไม่ได้เป็นสมาชิกใช่ไหม คลื๊กที่นึ้เพื่อสมัครสมาชิก <a href="signup.php">สมัครสมาชิก</a></p>
 
                                         <!-- <button class="btn btn-lg btn-block btn-primary" style="background-color: #dd4b39;" type="submit"><i class="fab fa-google me-2"></i> Sign in with google</button>
                                         <button class="btn btn-lg btn-block btn-primary" style="background-color: #3b5998;" type="submit"><i class="fab fa-facebook-f me-2"></i>Sign in with facebook</button> -->

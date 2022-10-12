@@ -17,8 +17,9 @@ include('server.php');
     <link href="css/styles.css" rel="stylesheet" />
 </head>
 <body>
-    <!-- Navigation-->
-    <?php
+
+<!-- <header class="p-3 text-bg-info"> -->
+  <?php
     if($login==0){
   ?>
     <header class="navbar navbar-expand-lg navbar-light bg-info">
@@ -122,7 +123,7 @@ include('server.php');
               <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                 <div class="text-end">
                     <div class="dropdown">
-                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                        <button class="btn btn-outline-dark dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                             username
                         </button>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
@@ -140,118 +141,92 @@ include('server.php');
   <?php
     }
   ?>
-    <div class="container px-4 px-lg-5 mt-5 ">
-        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-            <a href="order-h.php">
-                <button class="btn btn-outline-dark" type="submit">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart-fill" viewBox="0 0 16 16">
-                    <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
-                </svg>Cart
-                <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
-                </button>
-            </a>
-        </div>
-    </div>
-    <!-- Product section-->
-    <section class="py-5">
-        <div class="container px-4 px-lg-5 my-5">
-            <div class="row gx-4 gx-lg-5 align-items-center">
-                <div class="col-md-6"><img class="card-img-top mb-5 mb-md-0" src="https://dummyimage.com/600x700/dee2e6/6c757d.jpg" alt="..." /></div>
-                <div class="col-md-6">
-                    <div class="small mb-1">SKU: BST-498</div>
-                    <h1 class="display-5 fw-bolder">Shop item template</h1>
-                    <div class="fs-5 mb-5">
-                        <span class="text-decoration-line-through">$45.00</span>
-                        <span>$40.00</span>
-                    </div>
-                    <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium at dolorem quidem modi. Nam sequi consequatur obcaecati excepturi alias magni, accusamus eius blanditiis delectus ipsam minima ea iste laborum vero?</p>
-                    <div class="d-flex">
-                        <div class="col-md-3 col-lg-3 col-xl-3 d-flex ">
-                            <p class="mt-2 mb-auto">ตัวเลื่อกเพิ่มเติม</p>
-                        </div>
-                        <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content">
-                            <?php
-                                for($i=1;$i<=6;$i++){
-                            ?>
-                                <div class="col form-check me-2 mb-3">
-                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                                    <label class="form-check-label" for="flexRadioDefault1">ไซต์ 38</label>
-                                </div>
-                            <?php
-                                }
-                            ?>
+  <div class="container mt-4">
+		<div class="main-body">
+			<div class="row gutters-sm">
+				<div class="col-lg-3 mb-3">
+					<div class="card">
+						<div class="card-body">
+							<div class="d-flex flex-column align-items-center text-center">
+								<img src="https://bootdey.com/img/Content/avatar/avatar6.png" alt="Admin" class="rounded-circle p-1 bg-primary" width="150">
+								<input type="file" name="avatar" accept="image/png, image/jpeg">
+                                <div class="mt-3">
+									<h4>John Doe</h4>
+								</div>
+							</div>
                         </div>
                     </div>
-                    <div class="d-flex mt-3 ">
-                        <div class="col-md-3 col-lg-3 col-xl-3 d-flex ">
-                            <p class="mt-2 mb-auto">จำนวน</p>
-                        </div>
-                        <div class="col-md-3 col-lg-3 col-xl-3 d-flex">
-                            <button class="btn btn-link px-2" onclick="this.parentNode.querySelector('input[type=number]').stepDown()" style="">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-dash" viewBox="0 0 16 16">
-                                <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z"/>
-                            </svg>
-                            </button>
-
-                            <input id="form1" min="0" name="quantity" value="1" type="number" class="form-control form-control-sm">
-
-                            <button class="btn btn-link px-2" onclick="this.parentNode.querySelector('input[type=number]').stepUp()" style="">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
-                                <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
-                            </svg>
-                            </button>
-                        </div>
+                    <div class="card mt-3">
+                        <ul class="list-group list-group-flush ">
+                            <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap ">
+                                <a href="#">ประวัติ</a>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                                <a href="#">ที่อยู่</a>
+                            </li>
+                        </ul>
                     </div>
-                    <div class="d-flex mt-5">
-                        <button class="btn btn-outline-dark flex-shrink-0" type="button">
-                            <i class="bi-cart-fill me-1"></i>
-                            เพิ่มในตะกร้า
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Related items section-->
-    <section class="py-5 bg-light">
-        <div class="container px-4 px-lg-5 mt-5">
-            <h2 class="fw-bolder mb-4">Related products</h2>
-            <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 ">
-                <?php
-                    for($i=1;$i<=4;$i++){
-                ?>
-                <div class="col mb-5">
-                    <div class="card h-100">
-                        <!-- Product image-->
-                        <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
-                        <!-- Product details-->
-                        <div class="card-body p-4">
-                            <div class="text-center">
-                                <!-- Product name-->
-                                <h5 class="fw-bolder">Fancy Product</h5>
-                                <!-- Product price-->
-                                $40.00 - $80.00
-                            </div>
-                        </div>
-                        <!-- Product actions-->
-                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">View options</a></div>
-                        </div>
-                    </div>
-                </div>
-                <?php
-                }
-                ?>
-            </div>
-        </div>
-    </section>
-    <!-- Footer-->
-    <footer class="py-5 bg-dark">
-        <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Your Website 2022</p></div>
-    </footer>
-    <!-- Bootstrap core JS-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Core theme JS-->
-    <script src="js/scripts.js"></script>
+				</div>
+				<div class="col-lg-9">
+					<div class="card mb-3">
+						<div class="card-body">
+							<div class="row mb-4">
+								<div class="col-sm-3">
+									<h6 class="mb-0">ชื่อ</h6>
+								</div>
+								<div class="col-sm-9 text-secondary">
+									<input type="text" class="form-control" value="John Doe">
+								</div>
+							</div>
+							<div class="row mb-4">
+								<div class="col-sm-3">
+									<h6 class="mb-0">Email</h6>
+								</div>
+								<div class="col-sm-9 text-secondary">
+									<input type="text" class="form-control" value="john@example.com">
+								</div>
+							</div>
+							<div class="row mb-4">
+								<div class="col-sm-3">
+									<h6 class="mb-0">เบอร์โทรศัพท์</h6>
+								</div>
+								<div class="col-sm-9 text-secondary">
+									<input type="text" class="form-control" value="012-3456789">
+								</div>
+							</div>
+                            <!-- row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content -->
+							<div class="row row-cols-2 row-cols-md-3 row-cols-xl-4 mb-4">
+								<div class="col-sm-4">
+									<h6 class="mb-0">เพศ</h6>
+								</div>
+								<div class="col-sm-9 text-secondary">
+									<input type="radio" name="gender"> เพศชาย
+								</div>
+                                <div class="col-sm-9 text-secondary">
+									<input type="radio" name="gender"> เพศหญิง
+								</div>
+                                <div class="col-sm-9 text-secondary">
+									<input type="radio" name="gender"> อื่นๆ
+								</div>
+							</div>
+							<div class="row mb-3">
+								<div class="col-sm-3">
+									<h6 class="mb-0">วัน/เดือน/ปีเกิด</h6>
+								</div>
+								<div class="col-sm-9 text-secondary">
+									<input type="date" name="date">
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-sm-3"></div>
+								<div class="col-sm-9 text-secondary">
+									<input type="button" class="btn btn-primary px-4" value="Save Changes">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </body>
-</html>

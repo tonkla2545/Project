@@ -1,6 +1,6 @@
 <?php
 
-include('server.php');
+include('../server.php');
 
 ?>
 <!DOCTYPE html>
@@ -19,19 +19,19 @@ include('server.php');
 <body>
 
 <!-- <navbar"> -->
-<?php
+  <?php
     if($login==0){
   ?>
     <header class="navbar navbar-expand-lg navbar-light bg-info">
         <div class="container px-4 px-lg-5">
-            <a class="navbar-brand" href="index.php">Start Bootstrap</a>
+            <a class="navbar-brand" href="../index.php">Start Bootstrap</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button> 
             <div class="collapse navbar-collapse" id="navbarScroll">
               <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
                 <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="#">หน้าแรก</a>
+                  <a class="nav-link active" aria-current="page" href="../index.php">หน้าแรก</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="#">เกี่ยวกับ</a>
@@ -65,8 +65,8 @@ include('server.php');
 
                 <div class="d-grid gap-2 d-md-flex">
                   <div class="text-end">
-                    <a href="login.php"><button type="button" class="btn btn-outline-dark me-2" >Login</button></a>
-                    <a href="signup.php"><button type="button" class="btn btn-dark">Sign-up</button></a>
+                    <a href="login/login.php"><button type="button" class="btn btn-outline-dark me-2" >Login</button></a>
+                    <a href="login/signup.php"><button type="button" class="btn btn-dark">Sign-up</button></a>
                   </div>
                 </div>
             </div> 
@@ -81,14 +81,14 @@ include('server.php');
   ?>
     <header class="navbar navbar-expand-lg navbar-light bg-info">
       <div class="container px-4 px-lg-5">
-          <a class="navbar-brand" href="index.php">Start Bootstrap</a>
+          <a class="navbar-brand" href="../index.php">Start Bootstrap</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button> 
             <div class="collapse navbar-collapse" id="navbarScroll">
               <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
                 <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="#">หน้าแรก</a>
+                  <a class="nav-link active" aria-current="page" href="../index.php">หน้าแรก</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="#">เกี่ยวกับ</a>
@@ -122,8 +122,8 @@ include('server.php');
 
               <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                 <div class="text-end">
-                    <div class="dropdown">
-                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                  <div class="dropdown">
+                        <button class="btn btn-outline-dark dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                             username
                         </button>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
@@ -136,8 +136,7 @@ include('server.php');
               </div>
           </div> 
       </div>
-    </div>
-  </header>
+    </header>
   <?php
     }
   ?>

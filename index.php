@@ -65,8 +65,8 @@ include('server.php');
 
                 <div class="d-grid gap-2 d-md-flex">
                   <div class="text-end">
-                    <a href="login.php"><button type="button" class="btn btn-outline-dark me-2" >Login</button></a>
-                    <a href="signup.php"><button type="button" class="btn btn-dark">Sign-up</button></a>
+                    <a href="login/login.php"><button type="button" class="btn btn-outline-dark me-2" >Login</button></a>
+                    <a href="login/signup.php"><button type="button" class="btn btn-dark">Sign-up</button></a>
                   </div>
                 </div>
             </div> 
@@ -145,7 +145,7 @@ include('server.php');
 <!-- ตะกร้า -->
   <div class="container px-4 px-lg-5 mt-5 ">
       <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-      <a href="order-h.php">
+        <a href="item/order-h.php">
           <button class="btn btn-outline-dark" type="submit">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart-fill" viewBox="0 0 16 16">
               <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
@@ -166,7 +166,7 @@ include('server.php');
                   <div class="card h-100">
                       <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>
                       <!-- Product image-->
-                      <a href="shop-item.php"><img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." /></a>
+                        <a href="item/shop-item.php"><img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." /></a>
                       <!-- Product details-->
                       <div class="card-body p-4">
                           <div class="text-center">
@@ -179,7 +179,7 @@ include('server.php');
                       </div>
                       <!-- Product actions-->
                       <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                          <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="shop-item.php">ดูสินค้า</a></div>
+                          <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="item/shop-item.php">ดูสินค้า</a></div>
                       </div>
                   </div>
               </div>
