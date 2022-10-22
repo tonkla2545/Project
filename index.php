@@ -2,7 +2,8 @@
 
   include('server.php');
   include('Data/data.php');
-  $sql ="INSERT INTO user(user_name, email, date) VALUES(:user_name, :email, :date)"
+  $sql ="INSERT INTO user(user_name, email, date) VALUES(:user_name, :email, :date)";
+  $query = $dbcon->prepare($sql);
 
 ?>
 <!DOCTYPE html>
