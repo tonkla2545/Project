@@ -127,8 +127,8 @@ include('server.php');
                             username
                         </button>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                            <li><a class="dropdown-item" href="profile.php">บัญชีของฉัน</a></li>
-                            <li><a class="dropdown-item" href="#">ประวัติการเช่า</a></li>
+                            <li><a class="dropdown-item" href="profile/profile.php">บัญชีของฉัน</a></li>
+                            <li><a class="dropdown-item" href="profile/profile.php">ประวัติการเช่า</a></li>
                             <li><a class="dropdown-item" href="index.php">ออกจากระบบ</a></li>
                         </ul>
                     </div>
@@ -255,65 +255,6 @@ include('server.php');
         </ul>
       </div>
 
-      <div class="col mb-3">
-        <h5>รองเท้าผู้ชาย</h5>
-        <ul class="nav flex">
-          <div class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted-outline">รองเท้าแตะ</a></div>
-          <span>&nbsp;|&nbsp;</span>
-          <div class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted-outline">รองเท้าผ้าใบ</a></div>
-          <span>&nbsp;|&nbsp;</span>
-          <div class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted-outline">รองเท้าหนัง</a></div>
-          <span>&nbsp;|&nbsp;</span>
-          <div class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted-outline">รองเท้าบูท</a></div>
-          <span>&nbsp;|&nbsp;</span>
-          <div class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted-outline">ถุงเท้า</a></div>
-          <span>&nbsp;|&nbsp;</span>
-          <div class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted-outline">อื่นๆ</a></div>
-          <span>&nbsp;|&nbsp;</span>
-        </ul>
-      </div>
-
-      <div class="col mb-3">    
-        <h5>รองเท้าผู้หญิง</h5>
-        <ul class="nav flex">
-          <div class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted-outline">รองเท้าแตะ</a></div>
-          <span>&nbsp;|&nbsp;</span>
-          <div class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted-outline">รองเท้าผ้าใบ</a></div>
-          <span>&nbsp;|&nbsp;</span>
-          <div class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted-outline">รองเท้าหนัง</a></div>
-          <span>&nbsp;|&nbsp;</span>
-          <div class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted-outline">รองเท้าบูท</a></div>
-          <span>&nbsp;|&nbsp;</span>
-          <div class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted-outline">ถุงเท้าและถุงน่อง</a></div>
-          <span>&nbsp;|&nbsp;</span>
-          <div class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted-outline">รองเท้าส้นสูง</a></div>
-          <span>&nbsp;|&nbsp;</span>
-          <div class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted-outline">รองเท้าส้นแบน</a></div>
-          <span>&nbsp;|&nbsp;</span>
-          <div class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted-outline">อื่นๆ</a></div>
-          <span>&nbsp;|&nbsp;</span>
-        </ul>
-      </div>
-
-      <div class="col mb-3">
-        <h5>กระเป๋า</h5>
-        <ul class="nav flex">
-          <div class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted-outline">กระเป๋าสะพายข้าง</a></div>
-          <span>&nbsp;|&nbsp;</span>
-          <div class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted-outline">กระเป๋าสะพายหลัง</a></div>
-          <span>&nbsp;|&nbsp;</span>
-          <div class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted-outline">กระเป๋าเดินทาง</a></div>
-          <span>&nbsp;|&nbsp;</span>
-          <div class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted-outline">กระเป๋าสตางค์</a></div>
-          <span>&nbsp;|&nbsp;</span>
-          <div class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted-outline">กระเป๋าผ้า</a></div>
-          <span>&nbsp;|&nbsp;</span>
-          <div class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted-outline">กระเป๋าถือ</a></div>
-          <span>&nbsp;|&nbsp;</span>
-          <div class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted-outline">อื่นๆ</a></div>
-          <span>&nbsp;|&nbsp;</span>
-        </ul>
-      </div>
     </footer>
 
   </div>

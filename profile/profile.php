@@ -1,6 +1,6 @@
 <?php
 
-include('server.php');
+include('../server.php');
 
 ?>
 <!DOCTYPE html>
@@ -24,14 +24,14 @@ include('server.php');
   ?>
     <header class="navbar navbar-expand-lg navbar-light bg-info">
         <div class="container px-4 px-lg-5">
-            <a class="navbar-brand" href="index.php">Start Bootstrap</a>
+            <a class="navbar-brand" href="../index.php">Start Bootstrap</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button> 
             <div class="collapse navbar-collapse" id="navbarScroll">
               <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
                 <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="#">หน้าแรก</a>
+                  <a class="nav-link active" aria-current="page" href="../index.php">หน้าแรก</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="#">เกี่ยวกับ</a>
@@ -65,8 +65,8 @@ include('server.php');
 
                 <div class="d-grid gap-2 d-md-flex">
                   <div class="text-end">
-                    <a href="login.php"><button type="button" class="btn btn-outline-dark me-2" >Login</button></a>
-                    <a href="signup.php"><button type="button" class="btn btn-dark">Sign-up</button></a>
+                    <a href="login/login.php"><button type="button" class="btn btn-outline-dark me-2" >Login</button></a>
+                    <a href="login/signup.php"><button type="button" class="btn btn-dark">Sign-up</button></a>
                   </div>
                 </div>
             </div> 
@@ -81,14 +81,14 @@ include('server.php');
   ?>
     <header class="navbar navbar-expand-lg navbar-light bg-info">
       <div class="container px-4 px-lg-5">
-          <a class="navbar-brand" href="index.php">Start Bootstrap</a>
+          <a class="navbar-brand" href="../index.php">Start Bootstrap</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button> 
             <div class="collapse navbar-collapse" id="navbarScroll">
               <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
                 <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="#">หน้าแรก</a>
+                  <a class="nav-link active" aria-current="page" href="../index.php">หน้าแรก</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="#">เกี่ยวกับ</a>
@@ -141,92 +141,95 @@ include('server.php');
   <?php
     }
   ?>
+  <!-- Profile -->
   <div class="container mt-4">
-		<div class="main-body">
-			<div class="row gutters-sm">
-				<div class="col-lg-3 mb-3">
-					<div class="card">
-						<div class="card-body">
-							<div class="d-flex flex-column align-items-center text-center">
-								<img src="https://bootdey.com/img/Content/avatar/avatar6.png" alt="Admin" class="rounded-circle p-1 bg-primary" width="150">
-								<input type="file" name="avatar" accept="image/png, image/jpeg">
-                                <div class="mt-3">
-									<h4>John Doe</h4>
-								</div>
-							</div>
-                        </div>
+    <div class="main-body">
+          <div class="row gutters-sm">
+            <div class="col-md-3 mb-3">
+              <div class="card">
+                <div class="card-body">
+                  <div class="d-flex flex-column align-items-center text-center">
+                    <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" class="rounded-circle" width="150">
+                    <div class="mt-3">
+                      <h4>John Doe</h4>
                     </div>
-                    <div class="card mt-3">
-                        <ul class="list-group list-group-flush ">
-                            <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap ">
-                                <a href="#">ประวัติ</a>
-                            </li>
-                            <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
-                                <a href="#">ที่อยู่</a>
-                            </li>
-                        </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="card mt-3">
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                    <a href="#">ประวัติ</a>
+                  </li>
+                  <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                    <a href="#">ที่อยู่</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-md-9">
+              <div class="card mb-3">
+                <div class="card-body">
+                  <div class="row mt-4">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">ชื่อ</h6>
                     </div>
-				</div>
-				<div class="col-lg-9">
-					<div class="card mb-3">
-						<div class="card-body">
-							<div class="row mb-4">
-								<div class="col-sm-3">
-									<h6 class="mb-0">ชื่อ</h6>
-								</div>
-								<div class="col-sm-9 text-secondary">
-									<input type="text" class="form-control" value="John Doe">
-								</div>
-							</div>
-							<div class="row mb-4">
-								<div class="col-sm-3">
-									<h6 class="mb-0">Email</h6>
-								</div>
-								<div class="col-sm-9 text-secondary">
-									<input type="text" class="form-control" value="john@example.com">
-								</div>
-							</div>
-							<div class="row mb-4">
-								<div class="col-sm-3">
-									<h6 class="mb-0">เบอร์โทรศัพท์</h6>
-								</div>
-								<div class="col-sm-9 text-secondary">
-									<input type="text" class="form-control" value="012-3456789">
-								</div>
-							</div>
-                            <!-- row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content -->
-							<div class="row row-cols-2 row-cols-md-3 row-cols-xl-4 mb-4">
-								<div class="col-sm-4">
-									<h6 class="mb-0">เพศ</h6>
-								</div>
-								<div class="col-sm-9 text-secondary">
-									<input type="radio" name="gender"> เพศชาย
-								</div>
-                                <div class="col-sm-9 text-secondary">
-									<input type="radio" name="gender"> เพศหญิง
-								</div>
-                                <div class="col-sm-9 text-secondary">
-									<input type="radio" name="gender"> อื่นๆ
-								</div>
-							</div>
-							<div class="row mb-3">
-								<div class="col-sm-3">
-									<h6 class="mb-0">วัน/เดือน/ปีเกิด</h6>
-								</div>
-								<div class="col-sm-9 text-secondary">
-									<input type="date" name="date">
-								</div>
-							</div>
-							<div class="row">
-								<div class="col-sm-3"></div>
-								<div class="col-sm-9 text-secondary">
-									<input type="button" class="btn btn-primary px-4" value="Save Changes">
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+                    <div class="col-sm-9 text-secondary">
+                      Kenneth Valdez
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row mt-4">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Email</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                      fip@jukmuh.al
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row mt-4">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">เบอร์โทรศัพท์</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                      012-3456789
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row mt-4">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">เพศ</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                        เพศชาย,เพศหญิง,อื่นๆ
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row mt-4">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">วัน/เดือน/ปีเกิด</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                        1 มกราคม 2000
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row mt-4">
+                    <div class="col-sm-12">
+                      <a class="btn btn-info " target="__blank" href="profile-edit.php">แก้ไขข้อมูล</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+
+
+            </div>
+          </div>
+
+        </div>
+    </div>
+
 </body>
