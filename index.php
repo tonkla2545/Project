@@ -2,15 +2,20 @@
 
   include('server.php');
   include('Data/data.php');
-  $sql ="INSERT INTO user(user_name, email, date) VALUES(:user_name, :email, :date)";
-  $query = $dbcon->prepare($sql);
-  $query ->bindParam(':user_name', $name, PDO::PARAM_STR);
-  $query ->bindParam(':email', $email, PDO::PARAM_STR);
-  $query ->bindParam(':date', $date, PDO::PARAM_STR);
+  // $sql ="INSERT INTO user(user_name, email, date) VALUES(:user_name, :email, :date)";
+  // $query = $dbcon->prepare($sql);
+  // $query ->bindParam(':user_name', $name, PDO::PARAM_STR);
+  // $query ->bindParam(':email', $email, PDO::PARAM_STR);
+  // $query ->bindParam(':date', $date, PDO::PARAM_STR);
 
-  $name = "Chaloem";
-  $email = "Chaloemphon19545@gmail.com";
-  $data = Date('Y-m-d');
+  // $name = "Chaloem";
+  // $email = "Chaloemphon19545@gmail.com";
+  // $data = Date('Y-m-d');
+  $ssql = "SELECT * FROM users";
+  $query = $dbcon->prepare($sql);
+  $query->execute();
+  $result = $query;
+
 
 ?>
 <!DOCTYPE html>
