@@ -3,7 +3,7 @@
     $servername = "localhost";
     $username = "root";
     $userpass = "";
-    $dbname = "dataproject";
+    $dbname = "dataproject_main";
     
     try {
         $dbcon = new PDO("mysql:host=$servername; dbname=$dbname", $username, $userpass);
