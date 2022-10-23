@@ -14,8 +14,14 @@
   $ssql = "SELECT * FROM users";
   $query = $dbcon->prepare($sql);
   $query->execute();
-  $result = $query;
-
+  $result = $query->fetchAll(PDO::FETCH_OBJ);
+  if ($query->rowCount() > 0) {
+      foreach($result as $res){
+        echo $res->user_name."<br>";
+        echo $res->email."<br>";
+        echo $res->date."<br>";
+      }
+  }
 
 ?>
 <!DOCTYPE html>
