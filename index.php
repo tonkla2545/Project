@@ -11,17 +11,17 @@
   $name = "Chaloem";
   $email = "Chaloemphon19545@gmail.com";
   $data = Date('Y-m-d');
-  $ssql = "SELECT * FROM users";
-  $query = $dbcon->prepare($sql);
-  $query->execute();
-  $result = $query->fetchAll(PDO::FETCH_OBJ);
-  if ($query->rowCount() > 0) {
-      foreach($result as $res){
-        echo $res->name."<br>";
-        echo $res->email."<br>";
-        echo $res->date."<br>";
-      }
-  }
+  // $ssql = "SELECT * FROM users";
+  // $query = $dbcon->prepare($sql);
+  // $query->execute();
+  // $result = $query->fetchAll(PDO::FETCH_OBJ);
+  // if ($query->rowCount() > 0) {
+  //     foreach($result as $res){
+  //       echo $res->name."<br>";
+  //       echo $res->email."<br>";
+  //       echo $res->date."<br>";
+  //     }
+  // }
 
 ?>
 <!DOCTYPE html>
