@@ -15,6 +15,30 @@ include('../server.php');
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr .net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js" integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous"></script>
     <link href="css/styles.css" rel="stylesheet" />
+    <!--====== Tiny Slider CSS ======-->
+    <link rel="stylesheet" href="../css/tiny-slider.css" />
+
+    <!--====== Line Icons CSS ======-->
+    <link rel="stylesheet" href="../css/LineIcons.css" />
+
+    <!--====== Material Design Icons CSS ======-->
+    <link rel="stylesheet" href="../css/materialdesignicons.min.css" />
+
+    <!--====== Bootstrap CSS ======-->
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+
+    <!--====== gLightBox CSS ======-->
+    <link rel="stylesheet" href="../css/glightbox.min.css" />
+
+    <!--====== nouiSlider CSS ======-->
+    <link rel="stylesheet" href="../css/nouislider.min.css" />
+
+    <!--====== Default CSS ======-->
+    <link rel="stylesheet" href="../css/default.css" />
+
+    <!--====== Style CSS ======-->
+    <link rel="stylesheet" href="../css/style.css" />
+    
 </head>
 <body>
 
@@ -140,151 +164,111 @@ include('../server.php');
   <?php
     }
   ?>
-  <section class="h-100 h-custom" style="background-color: #eee;">
-  <div class="container py-5 h-100">
-    <div class="row d-flex justify-content-center align-items-center h-100">
-      <div class="col">
-        <div class="card">
-          <div class="card-body p-4">
-
-            <div class="row">
-
-              <div class="col-lg-7">
-                <h5 class="mb-3"><a href="#!" class="text-body"><i
-                      class="fas fa-long-arrow-alt-left me-2"></i>เลือกซื้อสินค้าต่อ</a></h5>
-                <hr>
-
-                <div class="d-flex justify-content-between align-items-center mb-4">
-                  <div>
-                    <p class="mb-1">ตะกร้าสินค้า</p>
-                    <p class="mb-0">จำนวนสินค้า _ รายการ</p>
-                  </div>
-                  <div>
-                    <!-- <p class="mb-0"><span class="text-muted">Sort by:</span> <a href="#!"
-                        class="text-body">price <i class="fas fa-angle-down mt-1"></i></a></p> -->
-                  </div>
-                </div>
-
-               <?php
-                for($i=1;$i<=3;$i++){
-               ?>
-                <div class="card mb-3">
-                  <div class="card-body">
-                    <div class="d-flex justify-content-between">
-                      <div class="d-flex flex-row align-items-center">
-                        <div>
-                          <img
-                            src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-shopping-carts/img1.webp"
-                            class="img-fluid rounded-3" alt="Shopping item" style="width: 65px;">
-                        </div>
-                        <div class="ms-3">
-                          <h5>Iphone 11 pro</h5>
-                          <p class="small mb-0">256GB, Navy Blue</p>
-                        </div>
-                      </div>
-                      <div class="d-flex flex-row align-items-center">
-                        <div style="width: 50px;">
-                          <h5 class="fw-normal mb-0">2</h5>
-                        </div>
-                        <div style="width: 80px;">
-                          <h5 class="mb-0">$900</h5>
-                        </div>
-                        <a href="#!" style="color: #cecece;"><i class="fas fa-trash-alt"></i></a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <?php
-                }
-                ?>
-
-              </div>
-              <div class="col-lg-5">
-
-                <div class="card bg-primary text-white rounded-3">
-                  <div class="card-body">
-                    <div class="d-flex justify-content-between align-items-center mb-4">
-                      <h5 class="mb-0">Card details</h5>
-                      <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/avatar-6.webp"
-                        class="img-fluid rounded-3" style="width: 45px;" alt="Avatar">
-                    </div>
-
-                    <p class="small mb-2">Card type</p>
-                    <a href="#!" type="submit" class="text-white"><i
-                        class="fab fa-cc-mastercard fa-2x me-2"></i></a>
-                    <a href="#!" type="submit" class="text-white"><i
-                        class="fab fa-cc-visa fa-2x me-2"></i></a>
-                    <a href="#!" type="submit" class="text-white"><i
-                        class="fab fa-cc-amex fa-2x me-2"></i></a>
-                    <a href="#!" type="submit" class="text-white"><i class="fab fa-cc-paypal fa-2x"></i></a>
-
-                    <form class="mt-4">
-                      <div class="form-outline form-white mb-4">
-                        <input type="text" id="typeName" class="form-control form-control-lg" siez="17"
-                          placeholder="Cardholder's Name" />
-                        <label class="form-label" for="typeName">Cardholder's Name</label>
-                      </div>
-
-                      <div class="form-outline form-white mb-4">
-                        <input type="text" id="typeText" class="form-control form-control-lg" siez="17"
-                          placeholder="1234 5678 9012 3457" minlength="19" maxlength="19" />
-                        <label class="form-label" for="typeText">Card Number</label>
-                      </div>
-
-                      <div class="row mb-4">
-                        <div class="col-md-6">
-                          <div class="form-outline form-white">
-                            <input type="text" id="typeExp" class="form-control form-control-lg"
-                              placeholder="MM/YYYY" size="7" id="exp" minlength="7" maxlength="7" />
-                            <label class="form-label" for="typeExp">Expiration</label>
+  <section class="checkout-wrapper pt-100">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="checkout-style-1">
+              <div class="checkout-table table-responsive">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th class="product">Product</th>
+                      <th class="quantity">Quantity</th>
+                      <th class="price">Price</th>
+                      <th class="action">Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                  <?php 
+                    for($i=1;$i<=4;$i++){
+                  ?>
+                    <tr>
+                      <td>
+                        <div class="product-cart d-flex">
+                          <div class="product-thumb">
+                            <img src="assets/images/product-cart/product-1.png" alt="Product">
+                          </div>
+                          <div class="product-content media-body">
+                            <h5 class="title"><a href="#0">Hollow Port</a></h5>
+                            <span>UG 0123</span>
                           </div>
                         </div>
-                        <div class="col-md-6">
-                          <div class="form-outline form-white">
-                            <input type="password" id="typeText" class="form-control form-control-lg"
-                              placeholder="&#9679;&#9679;&#9679;" size="1" minlength="3" maxlength="3" />
-                            <label class="form-label" for="typeText">Cvv</label>
-                          </div>
+                      </td>
+                      <td>
+                        <div class="product-quantity d-inline-flex">
+                          <button type="button" id="sub" class="sub">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-dash-lg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M2 8a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11A.5.5 0 0 1 2 8Z"/></svg>
+                          </button>
+                          <input type="text" value="0">
+                          <button type="button" id="add" class="add">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z"/></svg>
+                          </button>
                         </div>
+                      </td>
+                      <td>
+                        <p class="price">$36.00</p>
+                      </td>
+                      <td>
+                        <ul class="action">
+                          <li>
+                            <a class="delete" href="#0"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16"><path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/><path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/></svg></a>
+                          </li>
+                        </ul>
+                      </td>
+                    </tr>
+                    <?php 
+                      }
+                    ?>
+                  </tbody>
+                </table>
+              </div>
+              <div class="
+                  checkout-coupon-total checkout-coupon-total-2
+                  d-flex
+                  flex-wrap
+                ">
+                <div class="checkout-coupon">
+                  <span>Apply Coupon to get discount!</span>
+                  <form action="#">
+                    <div class="single-form form-default d-flex">
+                      <div class="form-input form">
+                        <input type="text" placeholder="Coupon Code">
                       </div>
-
-                    </form>
-
-                    <hr class="my-4">
-
-                    <div class="d-flex justify-content-between">
-                      <p class="mb-2">ราคารวมสินค้า</p>
-                      <p class="mb-2">$4798.00</p>
+                      <button class="main-btn primary-btn">Apply</button>
                     </div>
-
-                    <div class="d-flex justify-content-between">
-                      <p class="mb-2">ค้าส่ง</p>
-                      <p class="mb-2">$20.00</p>
-                    </div>
-
-                    <div class="d-flex justify-content-between mb-4">
-                      <p class="mb-2">ราคารวมทั้งหมด</p>
-                      <p class="mb-2">$4818.00</p>
-                    </div>
-
-                    <button type="button" class="btn btn-info btn-block btn-lg">
-                      <div class="d-flex justify-content-between">
-                        <span>$4818.00 &nbsp;</span>
-                        <span>ชำระเงิน <i class="fas fa-long-arrow-alt-right ms-2"></i></span>
-                      </div>
-                    </button>
-
+                  </form>
+                </div>
+                <div class="checkout-total">
+                  <div class="single-total">
+                    <p class="value">Subotal Price:</p>
+                    <p class="price">$144.00</p>
+                  </div>
+                  <div class="single-total">
+                    <p class="value">Shipping Cost (+):</p>
+                    <p class="price">$10.50</p>
+                  </div>
+                  <div class="single-total">
+                    <p class="value">Discount (-):</p>
+                    <p class="price">$10.50</p>
+                  </div>
+                  <div class="single-total total-payable">
+                    <p class="value">Total Payable:</p>
+                    <p class="price">$165.00</p>
                   </div>
                 </div>
-
               </div>
-
+              <div class="checkout-btn d-sm-flex justify-content-between">
+                <div class="single-btn">
+                  <a href="../index.php" class="main-btn primary-btn-border">continue shopping</a>
+                </div>
+                <div class="single-btn">
+                  <a href="shipping.php" class="main-btn primary-btn">Pay now</a>
+                </div>
+              </div>
             </div>
-
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 </body>
