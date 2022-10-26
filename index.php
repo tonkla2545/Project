@@ -1,7 +1,7 @@
 <?php
 
   include('server.php');
-  include('Data/data.php');
+  include('data/data.php');
   $sql ="INSERT INTO user(name, email, date) VALUES(:name, :email, :date)";
   $query = $dbcon->prepare($sql);
   $query ->bindParam(':name', $name, PDO::PARAM_STR);
@@ -11,17 +11,23 @@
   $name = "Chaloem";
   $email = "Chaloemphon19545@gmail.com";
   $data = Date('Y-m-d');
-  // $ssql = "SELECT * FROM users";
-  // $query = $dbcon->prepare($sql);
-  // $query->execute();
-  // $result = $query->fetchAll(PDO::FETCH_OBJ);
-  // if ($query->rowCount() > 0) {
-  //     foreach($result as $res){
-  //       echo $res->name."<br>";
-  //       echo $res->email."<br>";
-  //       echo $res->date."<br>";
-  //     }
-  // }
+  $ssql = "SELECT * FROM users";
+  $query = $dbcon->prepare($sql);
+  $query->execute();
+  $result = $query->fetchAll(PDO::FETCH_OBJ);
+  if ($query->rowCount() > 0) {
+      foreach($result as $res){
+        echo $res->name."<br>";
+        echo $res->email."<br>";
+        echo $res->date."<br>";
+      }
+  }
+  $result = $query->execute();
+  if ($result) {
+    echo "<script>alert('ok')</script>";
+  } else {
+    echo "<script>alert('noop')</script>";
+  }
 
 ?>
 <!DOCTYPE html>
