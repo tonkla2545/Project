@@ -1,6 +1,6 @@
 <?php
 
-$login = 1;
+$login = 0;
 
 ?>
 

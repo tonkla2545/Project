@@ -42,6 +42,29 @@ const increaseNumber = (incdec,itmeprice) =>{
     }
 }
 
+const decreaeNumber2 = (incdec) => {
+    var itmeval = document.getElementById(incdec);
+    
+    if(itmeval.value <= 0){
+        itmeval.value = 0;
+    }
+    else{
+        itmeval.value = parseInt(itmeval.value) - 1;
+
+    }
+}
+
+const increaseNumber2 = (incdec) =>{
+    var itmeval = document.getElementById(incdec);
+
+    if(itmeval.value >= 0){
+        itmeval.value = parseInt(itmeval.value) +1;
+    }
+    else{
+        itmeval.value = 0;
+    }
+}
+
 const deletes = (incdec,itmeprice) =>{
     var itmeval = document.getElementById(incdec);
     var itmeprice = document.getElementById(itmeprice);
@@ -54,6 +77,14 @@ const deletes = (incdec,itmeprice) =>{
 }
 
 
-const addcard = () =>{
-    var itmeval = document.getElementById('')
+const addCard = (incdec,quantityCart) =>{
+    var itmeval = document.getElementById(incdec);
+    var quantityCart = document.getElementById(quantityCart);
+
+    if(itmeval.value <= 0){
+        quantityCart.innerHTML = 0;
+    }
+    else{
+        quantityCart.innerHTML = parseInt(itmeval.value)
+    }
 }

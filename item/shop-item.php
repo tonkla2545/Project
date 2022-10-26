@@ -65,8 +65,8 @@ include('../server.php');
 
                 <div class="d-grid gap-2 d-md-flex">
                     <div class="text-end">
-                        <a href="login/login.php"><button type="button" class="btn btn-outline-dark me-2" >Login</button></a>
-                        <a href="login/signup.php"><button type="button" class="btn btn-dark">Sign-up</button></a>
+                        <a href="../login/login.php"><button type="button" class="btn btn-outline-dark me-2" >Login</button></a>
+                        <a href="../login/signup.php"><button type="button" class="btn btn-dark">Sign-up</button></a>
                     </div>
                 </div>
             </div> 
@@ -126,7 +126,7 @@ include('../server.php');
                                 username
                             </button>
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                <li><a class="dropdown-item" href="profile.php">บัญชีของฉัน</a></li>
+                                <li><a class="dropdown-item" href="../profile/profile.php">บัญชีของฉัน</a></li>
                                 <li><a class="dropdown-item" href="../order/order-h.php">ประวัติการเช่า</a></li>
                                 <li><a class="dropdown-item" href="#">ออกจากระบบ</a></li>
                             </ul>
@@ -146,7 +146,7 @@ include('../server.php');
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart-fill" viewBox="0 0 16 16">
                     <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
                 </svg>Cart
-                <span class="badge bg-dark text-white ms-1 rounded-pill" id="idprice">0</span>
+                <span class="badge bg-dark text-white ms-1 rounded-pill" id="quantityCart">0</span>
                 </button>
             </a>
         </div>
@@ -173,7 +173,7 @@ include('../server.php');
                                 for($i=1;$i<=6;$i++){
                             ?>
                                 <div class="col form-check me-2 mb-3">
-                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="AddOn">
                                     <label class="form-check-label" for="flexRadioDefault1">ไซต์ 38</label>
                                 </div>
                             <?php
@@ -186,15 +186,15 @@ include('../server.php');
                             <p class="mt-2 mb-auto">จำนวน</p>
                         </div>
                         <div class="col-md-3 col-lg-3 col-xl-3 d-flex">
-                            <button class="btn btn-link px-2" onclick="decreaeNumber('textbox')" style="">
+                            <button class="btn btn-link px-2" onclick="decreaeNumber2('textbox')" style="">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-dash" viewBox="0 0 16 16">
                                 <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z"/>
                             </svg>
                             </button>
 
-                            <input id="textbox" min="0" name="quantity" value="1" type="number" class="form-control form-control-sm">
+                            <input id="textbox" min="0" name="quantity" value="0" type="number" class="form-control form-control-sm">
 
-                            <button class="btn btn-link px-2" onclick="increaseNumber('textbox')" style="">
+                            <button class="btn btn-link px-2" onclick="increaseNumber2('textbox')" style="">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
                                 <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
                             </svg>
@@ -202,7 +202,7 @@ include('../server.php');
                         </div>
                     </div>
                     <div class="d-flex mt-5">
-                        <button class="btn btn-outline-dark flex-shrink-0" type="button" onclick="addCard()">
+                        <button class="btn btn-outline-dark flex-shrink-0" type="button" onclick="addCard('textbox','quantityCart')">
                             <i class="bi-cart-fill me-1"></i>
                             เพิ่มในตะกร้า
                         </button>

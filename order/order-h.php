@@ -88,8 +88,8 @@ include('../server.php');
 
                 <div class="d-grid gap-2 d-md-flex">
                   <div class="text-end">
-                    <a href="login/login.php"><button type="button" class="btn btn-outline-dark me-2" >Login</button></a>
-                    <a href="login/signup.php"><button type="button" class="btn btn-dark">Sign-up</button></a>
+                    <a href="../login/login.php"><button type="button" class="btn btn-outline-dark me-2" >Login</button></a>
+                    <a href="../login/signup.php"><button type="button" class="btn btn-dark">Sign-up</button></a>
                   </div>
                 </div>
             </div> 
@@ -150,7 +150,7 @@ include('../server.php');
                             username
                         </button>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                            <li><a class="dropdown-item" href="../profilr/profile.php">บัญชีของฉัน</a></li>
+                            <li><a class="dropdown-item" href="../profile/profile.php">บัญชีของฉัน</a></li>
                             <li><a class="dropdown-item" href="#">ประวัติการเช่า</a></li>
                             <li><a class="dropdown-item" href="#">ออกจากระบบ</a></li>
                         </ul>

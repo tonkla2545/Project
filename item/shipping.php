@@ -90,8 +90,8 @@ include('../server.php');
 
                 <div class="d-grid gap-2 d-md-flex">
                   <div class="text-end">
-                    <a href="login/login.php"><button type="button" class="btn btn-outline-dark me-2" >Login</button></a>
-                    <a href="login/signup.php"><button type="button" class="btn btn-dark">Sign-up</button></a>
+                    <a href="../login/login.php"><button type="button" class="btn btn-outline-dark me-2" >Login</button></a>
+                    <a href="../login/signup.php"><button type="button" class="btn btn-dark">Sign-up</button></a>
                   </div>
                 </div>
             </div> 
@@ -152,7 +152,7 @@ include('../server.php');
                             username
                         </button>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                            <li><a class="dropdown-item" href="profile.php">บัญชีของฉัน</a></li>
+                            <li><a class="dropdown-item" href="../profile/profile.php">บัญชีของฉัน</a></li>
                             <li><a class="dropdown-item" href="../order/order-h.php">ประวัติการเช่า</a></li>
                             <li><a class="dropdown-item" href="#">ออกจากระบบ</a></li>
                         </ul>
@@ -367,7 +367,7 @@ include('../server.php');
                               <label for="shipping-1">
                                 <img src="../img/kerry.png" width=150 alt="Sipping">
                                 <p>Kerry Express</p>
-                                <span class="price">$10.50</span>
+                                $<span class="price" id="kerry">10.50</span>
                               </label>
                             </div>
                             <div class="single-payment-option">
@@ -375,7 +375,7 @@ include('../server.php');
                               <label for="shipping-2">
                                 <img src="../img/TPost.png" width=150 alt="Sipping">
                                 <p>ไปรษณีย์ไทย</p>
-                                <span class="price">$10.50</span>
+                                $<span class="price" id="THPost">10.50</span>
                               </label>
                             </div>
                             <div class="single-payment-option">
@@ -383,7 +383,7 @@ include('../server.php');
                               <label for="shipping-3">
                                 <img src="../img/flash.jpg" width=150 alt="Sipping">
                                 <p>Flash Express</p>
-                                <span class="price">$10.50</span>
+                                $<span class="price" id="flash">10.50</span>
                               </label>
                             </div>
                             <div class="single-payment-option">
@@ -391,7 +391,7 @@ include('../server.php');
                               <label for="shipping-4">
                                 <img src="../img/JT.jpg" width=150 alt="Sipping">
                                 <p>J&T Express</p>
-                                <span class="price">$10.50</span>
+                                $<span class="price" id="JT">10.50</span>
                               </label>
                             </div>
                           </div>

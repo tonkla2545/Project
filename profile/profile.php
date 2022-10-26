@@ -65,8 +65,8 @@ include('../server.php');
 
                 <div class="d-grid gap-2 d-md-flex">
                   <div class="text-end">
-                    <a href="login/login.php"><button type="button" class="btn btn-outline-dark me-2" >Login</button></a>
-                    <a href="login/signup.php"><button type="button" class="btn btn-dark">Sign-up</button></a>
+                    <a href="../login/login.php"><button type="button" class="btn btn-outline-dark me-2" >Login</button></a>
+                    <a href="../login/signup.php"><button type="button" class="btn btn-dark">Sign-up</button></a>
                   </div>
                 </div>
             </div> 

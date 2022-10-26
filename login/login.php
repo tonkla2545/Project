@@ -44,25 +44,27 @@ include('../server.php');
 
                                     <h3 class="mb-5">เข้าสู่ระบบ</h3>
 
-                                    <div class="form-outline mb-2">
-                                        <input type="email" id="typeEmailX-2" class="form-control form-control-lg" placeholder="Email">
-                                        <label class="form-label" for="email" name="email" style="margin-left: 0px;" ></label>
-                                        <div class="form-notch">
-                                            <div class="form-notch-leading" style="width: 9px;"></div>
-                                            <div class="form-notch-middle" style="width: 40px;"></div>
-                                            <div class="form-notch-trailing"></div>
+                                    <form name="formlogin" action="checklogin.php">
+                                        <div class="form-outline mb-2">
+                                            <input type="email" id="typeEmailX-2" class="form-control form-control-lg" placeholder="Email">
+                                            <label class="form-label" for="email" name="email" style="margin-left: 0px;" ></label>
+                                            <div class="form-notch">
+                                                <div class="form-notch-leading" style="width: 9px;"></div>
+                                                <div class="form-notch-middle" style="width: 40px;"></div>
+                                                <div class="form-notch-trailing"></div>
+                                            </div>
                                         </div>
-                                    </div>
 
-                                    <div class="form-outline mb-2">
-                                        <input type="password" id="typePasswordX-2" class="form-control form-control-lg" placeholder="รหัสผ่าน">
-                                        <label class="form-label" for="password" name="password" style="margin-left: 0px;"></label>
-                                        <div class="form-notch">
-                                            <div class="form-notch-leading" style="width: 9px;"></div>
-                                            <div class="form-notch-middle" style="width: 64.8px;"></div>
-                                            <div class="form-notch-trailing"></div>
+                                        <div class="form-outline mb-2">
+                                            <input type="password" id="typePasswordX-2" class="form-control form-control-lg" placeholder="รหัสผ่าน">
+                                            <label class="form-label" for="password" name="password" style="margin-left: 0px;"></label>
+                                            <div class="form-notch">
+                                                <div class="form-notch-leading" style="width: 9px;"></div>
+                                                <div class="form-notch-middle" style="width: 64.8px;"></div>
+                                                <div class="form-notch-trailing"></div>
+                                            </div>
                                         </div>
-                                    </div>
+                                    </form>
 
                                     <!-- Checkbox -->
                                     <div class="form-check d-flex justify-content-start mb-4">
