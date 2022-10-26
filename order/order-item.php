@@ -15,7 +15,7 @@ if (isset($_GET['logout'])) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BorrowTime</title>
+    <title>เช่าสูทผู้ชาย</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
@@ -53,7 +53,7 @@ if (isset($_GET['logout'])) {
   ?>
     <header class="navbar navbar-expand-lg navbar-light bg-info">
         <div class="container px-4 px-lg-5">
-            <a class="navbar-brand" href="../index.php">Start Bootstrap</a>
+            <a class="navbar-brand" href="../index.php">เช่าสูทผู้ชาย</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button> 
@@ -107,7 +107,7 @@ if (isset($_GET['logout'])) {
   ?>
     <header class="navbar navbar-expand-lg navbar-light bg-info">
       <div class="container px-4 px-lg-5">
-          <a class="navbar-brand" href="../index.php">Start Bootstrap</a>
+          <a class="navbar-brand" href="../index.php">เช่าสูทผู้ชาย</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button> 
@@ -171,7 +171,7 @@ if (isset($_GET['logout'])) {
             <div class="order-id-content">
               <h4 class="order-id">Order ID: 1234567890</h4>
               <ul class="order-meta">
-                <li><a class="product" href="#0">4 Product</a></li>
+                <li><a class="product" href="order-item.php"><span id="product">4 &nbsp;</span>Product</a></li>
               </ul>
               <div class="single-progress-bar-horizontal shipped">
                 <div class="progress-text">
@@ -191,7 +191,7 @@ if (isset($_GET['logout'])) {
               <div class="col-md-7">
                 <div class="order-product mt-30">
                   <div class="order-title bg-info">
-                    <h5 class="title ">Ordered Products</h5>
+                    <h5 class="title ">สินค้าที่สั่ง</h5>
                   </div>
                   <div class="order-product-table table-responsive">
                     <table class="table">
@@ -228,20 +228,16 @@ if (isset($_GET['logout'])) {
                   </div>
                   <div class="order-product-total">
                     <div class="sub-total">
-                      <p class="value">Subotal Price:</p>
+                      <p class="value">ราคาสินค้า:</p>
                       <p class="price">$144.00</p>
                     </div>
                     <div class="sub-total">
-                      <p class="value">Shipping Cost (+):</p>
-                      <p class="price">$10.50</p>
-                    </div>
-                    <div class="sub-total">
-                      <p class="value">Discount (-):</p>
+                      <p class="value">ส่วนลด:</p>
                       <p class="price">$10.00</p>
                     </div>
                   </div>
                   <div class="payable-total">
-                    <p class="value">Total Payable:</p>
+                    <p class="value">ราคารวมทั้งหมด:</p>
                     <p class="price">$10.00</p>
                   </div>
                 </div>
@@ -249,7 +245,7 @@ if (isset($_GET['logout'])) {
               <div class="col-md-5">
                 <div class="single-order-details mt-30">
                   <div class="order-title bg-info">
-                    <h5 class="title">Ordered Products</h5>
+                    <h5 class="title">สินค้าที่สั่ง</h5>
                   </div>
                   <div class="order-details-content">
                     <div class="single-details-item d-flex flex-wrap">
@@ -272,12 +268,12 @@ if (isset($_GET['logout'])) {
                 </div>
                 <div class="single-order-details mt-25">
                   <div class="order-title bg-info">
-                    <h5 class="title">Pesonal Details</h5>
+                    <h5 class="title">ข้อมูลส่วนตัว</h5>
                   </div>
                   <div class="order-details-content">
                     <div class="single-details-item d-flex flex-wrap">
                       <div class="details-title">
-                        <h6 class="title">Name:</h6>
+                        <h6 class="title">ชื่อ:</h6>
                       </div>
                       <div class="details-content">
                         <p>Jhone Doe</p>
@@ -293,81 +289,13 @@ if (isset($_GET['logout'])) {
                     </div>
                     <div class="single-details-item d-flex flex-wrap">
                       <div class="details-title">
-                        <h6 class="title">Phone:</h6>
+                        <h6 class="title">เบอร์โทรศัพท์:</h6>
                       </div>
                       <div class="details-content">
                         <p>+123 456 789 0234</p>
                       </div>
                     </div>
-                    <div class="single-details-item d-flex flex-wrap">
-                      <div class="details-title">
-                        <h6 class="title">Mailing Address:</h6>
-                      </div>
-                      <div class="details-content">
-                        <p>
-                          Company Inc., 8901 Marmora Road, Glasgow, D04 89GR.
-                        </p>
-                      </div>
-                    </div>
                   </div>
-                </div>
-                <div class="single-order-details mt-25">
-                  <div class="order-title bg-info">
-                    <h5 class="title">Shipping Address</h5>
-                  </div>
-                  <div class="order-details-content">
-                    <div class="single-details-item d-flex flex-wrap">
-                      <div class="details-title">
-                        <h6 class="title">Name:</h6>
-                      </div>
-                      <div class="details-content">
-                        <p>Jhone Doe</p>
-                      </div>
-                    </div>
-                    <div class="single-details-item d-flex flex-wrap">
-                      <div class="details-title">
-                        <h6 class="title">Email:</h6>
-                      </div>
-                      <div class="details-content">
-                        <p>doejhon@email.com</p>
-                      </div>
-                    </div>
-                    <div class="single-details-item d-flex flex-wrap">
-                      <div class="details-title">
-                        <h6 class="title">Phone:</h6>
-                      </div>
-                      <div class="details-content">
-                        <p>+123 456 789 0234</p>
-                      </div>
-                    </div>
-                    <div class="single-details-item d-flex flex-wrap">
-                      <div class="details-title">
-                        <h6 class="title">Mailing Address:</h6>
-                      </div>
-                      <div class="details-content">
-                        <p>
-                          Company Inc., 8901 Marmora Road, Glasgow, D04 89GR.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-12">
-                <div class="order-policy mt-30">
-                  <div class="order-title">
-                    <h5 class="title">Cancellation Policy</h5>
-                  </div>
-                  <div class="policy-content">
-                    <p>Cancellation Policy goes here.</p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-12">
-                <div class="order-btn pt-20">
-                  <a href="#0" class="main-btn primary-btn-text">Write a Review</a>
-                  <a href="#0" class="main-btn primary-btn-text">Buy again</a>
-                  <a href="#0" class="main-btn error-btn-text">Cancel order</a>
                 </div>
               </div>
             </div>
@@ -375,4 +303,5 @@ if (isset($_GET['logout'])) {
         </div>
       </div>
     </section>
+    <script src="../js/scripts.js"></script>
 </body>

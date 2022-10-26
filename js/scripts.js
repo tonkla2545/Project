@@ -88,3 +88,24 @@ const addCard = (incdec,quantityCart) =>{
         quantityCart.innerHTML = parseInt(itmeval.value)
     }
 }
+
+
+const Discount = (member) =>{
+    var member = document.getElementById(member);
+    
+    member = 'silver'
+    if(member == 'silver'){
+        discount.innerHTML = parseFloat(product_price_total.innerHTML) * 0.3;
+        price_total.innerHTML = parseFloat(price_total.innerHTML ) - parseFloat(discount);
+    }
+    else if(member == 'gold'){
+        discount.innerHTML = parseFloat(product_price_total.innerHTML) * 0.6;
+        price_total.innerHTML = parseFloat(price_total.innerHTML ) - parseFloat(discount);
+    }
+    else if(member == 'premium'){
+        discount.innerHTML = parseFloat(product_price_total.innerHTML) * 1.0;
+        price_total.innerHTML = parseFloat(price_total.innerHTML ) - parseFloat(discount);
+    }
+
+}
+
