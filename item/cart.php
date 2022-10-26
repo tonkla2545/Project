@@ -14,11 +14,35 @@ include('../server.php');
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr .net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js" integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous"></script>
-    <link href="../css/styles.css" rel="stylesheet" />
+    <link href="css/styles.css" rel="stylesheet" />
+    <!--====== Tiny Slider CSS ======-->
+    <link rel="stylesheet" href="../css/tiny-slider.css" />
+
+    <!--====== Line Icons CSS ======-->
+    <link rel="stylesheet" href="../css/LineIcons.css" />
+
+    <!--====== Material Design Icons CSS ======-->
+    <link rel="stylesheet" href="../css/materialdesignicons.min.css" />
+
+    <!--====== Bootstrap CSS ======-->
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+
+    <!--====== gLightBox CSS ======-->
+    <link rel="stylesheet" href="../css/glightbox.min.css" />
+
+    <!--====== nouiSlider CSS ======-->
+    <link rel="stylesheet" href="../css/nouislider.min.css" />
+
+    <!--====== Default CSS ======-->
+    <link rel="stylesheet" href="../css/default.css" />
+
+    <!--====== Style CSS ======-->
+    <link rel="stylesheet" href="../css/style.css" />
+    
 </head>
 <body>
 
-<!-- <header class="p-3 text-bg-info"> -->
+<!-- <navbar"> -->
   <?php
     if($login==0){
   ?>
@@ -122,12 +146,12 @@ include('../server.php');
 
               <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                 <div class="text-end">
-                    <div class="dropdown">
+                  <div class="dropdown">
                         <button class="btn btn-outline-dark dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                             username
                         </button>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                            <li><a class="dropdown-item" href="profile.php">บัญชีของฉัน</a></li>
+                            <li><a class="dropdown-item" href="../profile/profile.php">บัญชีของฉัน</a></li>
                             <li><a class="dropdown-item" href="../order/order-h.php">ประวัติการเช่า</a></li>
                             <li><a class="dropdown-item" href="#">ออกจากระบบ</a></li>
                         </ul>
@@ -136,100 +160,118 @@ include('../server.php');
               </div>
           </div> 
       </div>
-    </div>
-  </header>
+    </header>
   <?php
     }
   ?>
-  <!-- Profile -->
-  <div class="container mt-4">
-    <div class="main-body">
-          <div class="row gutters-sm">
-            <div class="col-md-3 mb-3">
-              <div class="card">
-                <div class="card-body">
-                  <div class="d-flex flex-column align-items-center text-center">
-                    <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" class="rounded-circle" width="150">
-                    <div class="mt-3">
-                      <h4>John Doe</h4>
+  <section class="checkout-wrapper pt-100">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="checkout-style-1">
+              <div class="checkout-table table-responsive">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th class="product">Product</th>
+                      <th class="quantity">Quantity</th>
+                      <th class="price">Price</th>
+                      <th class="action">Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                  <?php 
+                    for($i=1;$i<=4;$i++){
+                  ?>
+                    <tr>
+                      <td>
+                        <div class="product-cart d-flex">
+                          <div class="product-thumb">
+                            <img src="assets/images/product-cart/product-1.png" alt="Product">
+                          </div>
+                          <div class="product-content media-body">
+                            <h5 class="title"><a href="#0">Hollow Port</a></h5>
+                            <span>UG 0123</span>
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="product-quantity d-inline-flex">
+                          <button type="button" id="sub" class="sub" onclick="decreaeNumber('textbox','idprice')">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-dash-lg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M2 8a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11A.5.5 0 0 1 2 8Z"/></svg>
+                          </button>
+                          <input type="text" name="" class="page-link" value="0" id="textbox">
+                          <button type="button" id="add" class="add" onclick="increaseNumber('textbox','idprice')">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z"/></svg>
+                          </button>
+                        </div>
+                      </td>
+                      <td>
+                        <p>$<span class="price" id="idprice">0.00</span></p>
+                      </td>
+                      <td>
+                        <ul class="action">
+                          <li>
+                            <!-- <a class="delete" href="#0"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16"><path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/><path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/></svg></a> -->
+                            <button type="button" id="delete" class="delete" onclick="deletes('textbox','idprice')"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16"><path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/><path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/></svg></button>
+                          </li>
+                        </ul>
+                      </td>
+                    </tr>
+                    <?php 
+                      }
+                    ?>
+                  </tbody>
+                </table>
+              </div>
+              <div class="
+                  checkout-coupon-total checkout-coupon-total-2
+                  d-flex
+                  flex-wrap
+                ">
+                <div class="checkout-coupon">
+                  <span>Apply Coupon to get discount!</span>
+                  <form action="#">
+                    <div class="single-form form-default d-flex">
+                      <div class="form-input form">
+                        <input type="text" placeholder="Coupon Code">
+                      </div>
+                      <button class="main-btn primary-btn">Apply</button>
                     </div>
+                  </form>
+                </div>
+                <div class="checkout-total">
+                  <div class="single-total">
+                    <p class="value">Subotal Price:</p>
+                    <p class="price">$<span id="product_price_total">0.00</span></p>
+                  </div>
+                  <div class="single-total">
+                    <p class="value">Shipping Cost (+):</p>
+                    <p class="price">$<span id="shipping_charge">0.00</span></p>
+                  </div>
+                  <div class="single-total">
+                    <p class="value">Discount (-):</p>
+                    <p class="price">$<span id="discount">0.00</span></p>
+                  </div>
+                  <div class="single-total total-payable">
+                    <p class="value">Total Payable:</p>
+                    <p class="price">$<span id="price_total">0.00</span></p>
                   </div>
                 </div>
               </div>
-              <div class="card mt-3">
-                <ul class="list-group list-group-flush">
-                  <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
-                    <a href="#">ประวัติ</a>
-                  </li>
-                  <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
-                    <a href="#">ที่อยู่</a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div class="col-md-9">
-              <div class="card mb-3">
-                <div class="card-body">
-                  <div class="row mt-4">
-                    <div class="col-sm-3">
-                      <h6 class="mb-0">ชื่อ</h6>
-                    </div>
-                    <div class="col-sm-9 text-secondary">
-                      Kenneth Valdez
-                    </div>
-                  </div>
-                  <hr>
-                  <div class="row mt-4">
-                    <div class="col-sm-3">
-                      <h6 class="mb-0">Email</h6>
-                    </div>
-                    <div class="col-sm-9 text-secondary">
-                      fip@jukmuh.al
-                    </div>
-                  </div>
-                  <hr>
-                  <div class="row mt-4">
-                    <div class="col-sm-3">
-                      <h6 class="mb-0">เบอร์โทรศัพท์</h6>
-                    </div>
-                    <div class="col-sm-9 text-secondary">
-                      012-3456789
-                    </div>
-                  </div>
-                  <hr>
-                  <div class="row mt-4">
-                    <div class="col-sm-3">
-                      <h6 class="mb-0">เพศ</h6>
-                    </div>
-                    <div class="col-sm-9 text-secondary">
-                        เพศชาย,เพศหญิง,อื่นๆ
-                    </div>
-                  </div>
-                  <hr>
-                  <div class="row mt-4">
-                    <div class="col-sm-3">
-                      <h6 class="mb-0">วัน/เดือน/ปีเกิด</h6>
-                    </div>
-                    <div class="col-sm-9 text-secondary">
-                        1 มกราคม 2000
-                    </div>
-                  </div>
-                  <hr>
-                  <div class="row mt-4">
-                    <div class="col-sm-12">
-                      <a class="btn btn-info " target="__blank" href="profile-edit.php">แก้ไขข้อมูล</a>
-                    </div>
-                  </div>
+              <div class="checkout-btn d-sm-flex justify-content-between">
+                <div class="single-btn">
+                  <a href="../index.php" class="main-btn primary-btn-border">continue shopping</a>
+                </div>
+                <div class="single-btn">
+                  <a href="shipping.php" class="main-btn primary-btn">Pay now</a>
                 </div>
               </div>
-
-
-
-
             </div>
           </div>
-
         </div>
-    </div>
-
+      </div>
+    </section>
+    <script src="../js/scripts.js"></script>
 </body>
+</html>

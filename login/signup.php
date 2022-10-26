@@ -43,61 +43,64 @@ include('../server.php');
                                 <div class="card-body p-5 text-center">
 
                                     <h3 class="mb-5">สมัครสมาชิก</h3>
+                                    <form action="signup_db.php" method="post">
 
-                                    <div class="form-outline mb-2">
-                                        <input type="text" name="firstname" class="form-control form-control-lg" placeholder="Firstname">
-                                        <label class="form-label" for="firstname" style="margin-left: 0px;" ></label>
-                                        <div class="form-notch">
-                                            <div class="form-notch-leading" style="width: 9px;"></div>
-                                            <div class="form-notch-middle" style="width: 40px;"></div>
-                                            <div class="form-notch-trailing"></div>
+                                        <div class="form-outline mb-2">
+                                            <input type="text" name="firstname" class="form-control form-control-lg" placeholder="Firstname">
+                                            <label class="form-label" for="firstname" style="margin-left: 0px;" ></label>
+                                            <div class="form-notch">
+                                                <div class="form-notch-leading" style="width: 9px;"></div>
+                                                <div class="form-notch-middle" style="width: 40px;"></div>
+                                                <div class="form-notch-trailing"></div>
+                                            </div>
                                         </div>
-                                    </div>
 
-                                    <div class="form-outline mb-2">
-                                    <input type="text" name="lastname" class="form-control form-control-lg" placeholder="Lasttname">
-                                        <label class="form-label" for="lastname" style="margin-left: 0px;" ></label>
-                                        <div class="form-notch">
-                                            <div class="form-notch-leading" style="width: 9px;"></div>
-                                            <div class="form-notch-middle" style="width: 40px;"></div>
-                                            <div class="form-notch-trailing"></div>
+                                        <div class="form-outline mb-2">
+                                        <input type="text" name="lastname" class="form-control form-control-lg" placeholder="Lastname">
+                                            <label class="form-label" for="lastname" style="margin-left: 0px;" ></label>
+                                            <div class="form-notch">
+                                                <div class="form-notch-leading" style="width: 9px;"></div>
+                                                <div class="form-notch-middle" style="width: 40px;"></div>
+                                                <div class="form-notch-trailing"></div>
+                                            </div>
                                         </div>
-                                    </div>
 
-                                    <div class="form-outline mb-2">
-                                        <input type="email" id="typeEmailX-2" class="form-control form-control-lg" placeholder="Email">
-                                        <label class="form-label" for="email" name="email" style="margin-left: 0px;" ></label>
-                                        <div class="form-notch">
-                                            <div class="form-notch-leading" style="width: 9px;"></div>
-                                            <div class="form-notch-middle" style="width: 40px;"></div>
-                                            <div class="form-notch-trailing"></div>
+                                        <div class="form-outline mb-2">
+                                            <input type="email" id="typeEmailX-2" class="form-control form-control-lg" placeholder="Email">
+                                            <label class="form-label" for="email" name="email" style="margin-left: 0px;" ></label>
+                                            <div class="form-notch">
+                                                <div class="form-notch-leading" style="width: 9px;"></div>
+                                                <div class="form-notch-middle" style="width: 40px;"></div>
+                                                <div class="form-notch-trailing"></div>
+                                            </div>
                                         </div>
-                                    </div>
 
-                                    <div class="form-outline mb-2">
-                                        <input type="password" name="password" class="form-control form-control-lg" placeholder="รหัสผ่าน">
-                                        <label class="form-label" for="password" style="margin-left: 0px;"></label>
-                                        <div class="form-notch">
-                                            <div class="form-notch-leading" style="width: 9px;"></div>
-                                            <div class="form-notch-middle" style="width: 64.8px;"></div>
-                                            <div class="form-notch-trailing"></div>
+                                        <div class="form-outline mb-2">
+                                            <input type="password" name="password" class="form-control form-control-lg" placeholder="รหัสผ่าน">
+                                            <label class="form-label" for="password" style="margin-left: 0px;"></label>
+                                            <div class="form-notch">
+                                                <div class="form-notch-leading" style="width: 9px;"></div>
+                                                <div class="form-notch-middle" style="width: 64.8px;"></div>
+                                                <div class="form-notch-trailing"></div>
+                                            </div>
                                         </div>
-                                    </div>
 
-                                    <div class="form-outline mb-2">
-                                        <input type="password" name="c_password" class="form-control form-control-lg" placeholder="ยืนยันรหัสผ่าน">
-                                        <label class="form-label" for="confiem password" style="margin-left: 0px;"></label>
-                                        <div class="form-notch">
-                                            <div class="form-notch-leading" style="width: 9px;"></div>
-                                            <div class="form-notch-middle" style="width: 64.8px;"></div>
-                                            <div class="form-notch-trailing"></div>
+                                        <div class="form-outline mb-2">
+                                            <input type="password" name="c_password" class="form-control form-control-lg" placeholder="ยืนยันรหัสผ่าน">
+                                            <label class="form-label" for="confiem password" style="margin-left: 0px;"></label>
+                                            <div class="form-notch">
+                                                <div class="form-notch-leading" style="width: 9px;"></div>
+                                                <div class="form-notch-middle" style="width: 64.8px;"></div>
+                                                <div class="form-notch-trailing"></div>
+                                            </div>
                                         </div>
-                                    </div>
 
-                                    <button class="btn btn-primary btn-lg btn-block" type="submit">สมัครสมาชิก</button>
+                                        <button class="btn btn-primary btn-lg btn-block" type="submit" name="reg_user">สมัครสมาชิก</button>
 
-                                    <hr class="my-4">
-                                    <p>เป็นสมาชิกแล้วใช่ไหม คลื๊กที่นึ้เพื่อเข้าสู่ระบบ <a href="login.php">เข้าสู่ระบบ</a></p>
+                                        <hr class="my-4">
+                                        <p>เป็นสมาชิกแล้วใช่ไหม คลื๊กที่นึ้เพื่อเข้าสู่ระบบ <a href="login.php">เข้าสู่ระบบ</a></p>
+
+                                    </form>
 
                                         <!-- <button class="btn btn-lg btn-block btn-primary" style="background-color: #dd4b39;" type="submit"><i class="fab fa-google me-2"></i> Sign in with google</button>
                                         <button class="btn btn-lg btn-block btn-primary" style="background-color: #3b5998;" type="submit"><i class="fab fa-facebook-f me-2"></i>Sign in with facebook</button> -->

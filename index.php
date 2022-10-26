@@ -1,6 +1,7 @@
 <?php
 
   include('server.php');
+
   include('data/data.php');
   $sql ="INSERT INTO user(name, email, date) VALUES(:name, :email, :date)";
   $query = $dbcon->prepare($sql);
@@ -28,6 +29,7 @@
   } else {
     echo "<script>alert('noop')</script>";
   }
+  
 
 ?>
 <!DOCTYPE html>
@@ -58,7 +60,7 @@
             <div class="collapse navbar-collapse" id="navbarScroll">
               <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
                 <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="#">หน้าแรก</a>
+                  <a class="nav-link active" aria-current="page" href="index.php">หน้าแรก</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="#">เกี่ยวกับ</a>
@@ -115,7 +117,7 @@
             <div class="collapse navbar-collapse" id="navbarScroll">
               <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
                 <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="#">หน้าแรก</a>
+                  <a class="nav-link active" aria-current="page" href="index.php">หน้าแรก</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="#">เกี่ยวกับ</a>
@@ -155,7 +157,7 @@
                         </button>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                             <li><a class="dropdown-item" href="profile/profile.php">บัญชีของฉัน</a></li>
-                            <li><a class="dropdown-item" href="profile/profile.php">ประวัติการเช่า</a></li>
+                            <li><a class="dropdown-item" href="order/order-h.php">ประวัติการเช่า</a></li>
                             <li><a class="dropdown-item" href="index.php">ออกจากระบบ</a></li>
                         </ul>
                     </div>
@@ -172,7 +174,7 @@
 <!-- ตะกร้า -->
   <div class="container px-4 px-lg-5 mt-5 ">
       <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-        <a href="item/order-h.php">
+        <a href="item/cart.php">
           <button class="btn btn-outline-dark" type="submit">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart-fill" viewBox="0 0 16 16">
               <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
