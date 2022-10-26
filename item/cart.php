@@ -197,17 +197,17 @@ include('../server.php');
                       </td>
                       <td>
                         <div class="product-quantity d-inline-flex">
-                          <button type="button" id="sub" class="sub">
+                          <button type="button" id="sub" class="sub" onclick="decreaeNumber('textbox','idprice')">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-dash-lg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M2 8a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11A.5.5 0 0 1 2 8Z"/></svg>
                           </button>
-                          <input type="text" value="0">
-                          <button type="button" id="add" class="add">
+                          <input type="text" name="" class="page-link" value="0" id="textbox">
+                          <button type="button" id="add" class="add" onclick="increaseNumber('textbox','idprice')">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z"/></svg>
                           </button>
                         </div>
                       </td>
                       <td>
-                        <p class="price">$36.00</p>
+                        <p>$<span class="price" id="idprice">0.00</p>
                       </td>
                       <td>
                         <ul class="action">
@@ -271,4 +271,6 @@ include('../server.php');
         </div>
       </div>
     </section>
+    <script src="../js/scripts.js"></script>
 </body>
+</html>

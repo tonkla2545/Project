@@ -146,7 +146,7 @@ include('../server.php');
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart-fill" viewBox="0 0 16 16">
                     <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
                 </svg>Cart
-                <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
+                <span class="badge bg-dark text-white ms-1 rounded-pill" id="idprice">0</span>
                 </button>
             </a>
         </div>
@@ -186,15 +186,15 @@ include('../server.php');
                             <p class="mt-2 mb-auto">จำนวน</p>
                         </div>
                         <div class="col-md-3 col-lg-3 col-xl-3 d-flex">
-                            <button class="btn btn-link px-2" onclick="this.parentNode.querySelector('input[type=number]').stepDown()" style="">
+                            <button class="btn btn-link px-2" onclick="decreaeNumber('textbox')" style="">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-dash" viewBox="0 0 16 16">
                                 <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z"/>
                             </svg>
                             </button>
 
-                            <input id="form1" min="0" name="quantity" value="1" type="number" class="form-control form-control-sm">
+                            <input id="textbox" min="0" name="quantity" value="1" type="number" class="form-control form-control-sm">
 
-                            <button class="btn btn-link px-2" onclick="this.parentNode.querySelector('input[type=number]').stepUp()" style="">
+                            <button class="btn btn-link px-2" onclick="increaseNumber('textbox')" style="">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
                                 <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
                             </svg>
@@ -202,7 +202,7 @@ include('../server.php');
                         </div>
                     </div>
                     <div class="d-flex mt-5">
-                        <button class="btn btn-outline-dark flex-shrink-0" type="button">
+                        <button class="btn btn-outline-dark flex-shrink-0" type="button" onclick="addCard()">
                             <i class="bi-cart-fill me-1"></i>
                             เพิ่มในตะกร้า
                         </button>
@@ -248,5 +248,6 @@ include('../server.php');
     <footer class="py-5 bg-dark">
         <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Your Website 2022</p></div>
     </footer>
+    <script src="../js/scripts.js"></script>
 </body>
 </html>
