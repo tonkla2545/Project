@@ -431,22 +431,22 @@ include('../server.php');
                 <div class="sub-total-price">
                   <div class="total-price">
                     <p class="value">Subotal Price:</p>
-                    <p class="price">$144.00</p>
+                    <p class="price">$<span id="product_price_total">0.00</span></p>
                   </div>
                   <div class="total-price shipping">
-                    <p class="value">Subotal Price:</p>
-                    <p class="price">$10.50</p>
+                    <p class="value">Shipping Cost:</p>
+                    <p class="price">$<span id="shipping_charge">0.00</span></p>
                   </div>
                   <div class="total-price discount">
-                    <p class="value">Subotal Price:</p>
-                    <p class="price">$10.00</p>
+                    <p class="value">Discount:</p>
+                    <p class="price">$<span id="discount">0.00</span></p>
                   </div>
                 </div>
 
                 <div class="total-payable">
                   <div class="payable-price">
-                    <p class="value">Subotal Price:</p>
-                    <p class="price">$164.50</p>
+                    <p class="value">Total Payable:</p>
+                    <p class="price">$<span id="price_total">0.00</span></p>
                   </div>
                 </div>
 
