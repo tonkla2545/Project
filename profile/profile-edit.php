@@ -1,6 +1,12 @@
 <?php
 
-include('server.php');
+include('../server.php');
+
+if (isset($_GET['logout'])) {
+  session_destroy();
+  unset($_SESSION['username']);
+  header('location: login.php');
+}
 
 ?>
 <!DOCTYPE html>
@@ -20,7 +26,7 @@ include('server.php');
 
 <!-- <header class="p-3 text-bg-info"> -->
   <?php
-    if($login==0){
+    if(!isset($_SESSION['username'])):
   ?>
     <header class="navbar navbar-expand-lg navbar-light bg-info">
         <div class="container px-4 px-lg-5">
@@ -32,9 +38,6 @@ include('server.php');
               <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
                 <li class="nav-item">
                   <a class="nav-link active" aria-current="page" href="../index.php">หน้าแรก</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">เกี่ยวกับ</a>
                 </li>
               </ul>
 
@@ -74,10 +77,10 @@ include('server.php');
       </div>
     </header>
   <?php
-    }
+    endif
   ?>
   <?php
-    if($login==1){
+    if(isset($_SESSION['username'])):
   ?>
     <header class="navbar navbar-expand-lg navbar-light bg-info">
       <div class="container px-4 px-lg-5">
@@ -89,9 +92,6 @@ include('server.php');
               <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
                 <li class="nav-item">
                   <a class="nav-link active" aria-current="page" href="../index.php">หน้าแรก</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">เกี่ยวกับ</a>
                 </li>
               </ul>
 
@@ -124,12 +124,12 @@ include('server.php');
                 <div class="text-end">
                     <div class="dropdown">
                         <button class="btn btn-outline-dark dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                            username
+                          <span id="username">username</span> 
                         </button>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                             <li><a class="dropdown-item" href="profile.php">บัญชีของฉัน</a></li>
                             <li><a class="dropdown-item" href="../order/order-h.php">ประวัติการเช่า</a></li>
-                            <li><a class="dropdown-item" href="#">ออกจากระบบ</a></li>
+                            <li><a class="dropdown-item" href="../index.php?loguut='1'">ออกจากระบบ</a></li>
                         </ul>
                     </div>
                 </div>
@@ -139,7 +139,7 @@ include('server.php');
     </div>
   </header>
   <?php
-    }
+    endif
   ?>
   <div class="container mt-4">
 		<div class="main-body">
@@ -150,7 +150,7 @@ include('server.php');
 							<div class="d-flex flex-column align-items-center text-center">
 								<img src="https://bootdey.com/img/Content/avatar/avatar6.png" alt="Admin" class="rounded-circle p-1 bg-primary" width="150">
 								<input type="file" name="avatar" accept="image/png, image/jpeg">
-                                <div class="mt-3">
+                <div class="mt-3">
 									<h4>John Doe</h4>
 								</div>
 							</div>
@@ -160,9 +160,6 @@ include('server.php');
                         <ul class="list-group list-group-flush ">
                             <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap ">
                                 <a href="#">ประวัติ</a>
-                            </li>
-                            <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
-                                <a href="#">ที่อยู่</a>
                             </li>
                         </ul>
                     </div>
@@ -175,7 +172,7 @@ include('server.php');
 									<h6 class="mb-0">ชื่อ</h6>
 								</div>
 								<div class="col-sm-9 text-secondary">
-									<input type="text" class="form-control" value="John Doe">
+									<input type="text" class="form-control" value="John Doe" id="name">
 								</div>
 							</div>
 							<div class="row mb-4">
@@ -183,7 +180,7 @@ include('server.php');
 									<h6 class="mb-0">Email</h6>
 								</div>
 								<div class="col-sm-9 text-secondary">
-									<input type="text" class="form-control" value="john@example.com">
+									<input type="text" class="form-control" value="john@example.com" id="email">
 								</div>
 							</div>
 							<div class="row mb-4">
@@ -191,7 +188,7 @@ include('server.php');
 									<h6 class="mb-0">เบอร์โทรศัพท์</h6>
 								</div>
 								<div class="col-sm-9 text-secondary">
-									<input type="text" class="form-control" value="012-3456789">
+									<input type="text" class="form-control" value="012-3456789" id="phoneNum">
 								</div>
 							</div>
                             <!-- row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content -->
@@ -200,13 +197,13 @@ include('server.php');
 									<h6 class="mb-0">เพศ</h6>
 								</div>
 								<div class="col-sm-9 text-secondary">
-									<input type="radio" name="gender"> เพศชาย
+									<input type="radio" name="gender" id="gender"> เพศชาย
 								</div>
                                 <div class="col-sm-9 text-secondary">
-									<input type="radio" name="gender"> เพศหญิง
+									<input type="radio" name="gender" id="gender"> เพศหญิง
 								</div>
                                 <div class="col-sm-9 text-secondary">
-									<input type="radio" name="gender"> อื่นๆ
+									<input type="radio" name="gender" id="gender"> อื่นๆ
 								</div>
 							</div>
 							<div class="row mb-3">
@@ -220,7 +217,7 @@ include('server.php');
 							<div class="row">
 								<div class="col-sm-3"></div>
 								<div class="col-sm-9 text-secondary">
-									<input type="button" class="btn btn-primary px-4" value="Save Changes">
+                  <a class="btn " href="profile.php"><input type="button" class="btn btn-primary px-4" value="Save Changes" id="saveChange"></a>
 								</div>
 							</div>
 						</div>

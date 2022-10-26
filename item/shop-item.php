@@ -2,6 +2,12 @@
 
 include('../server.php');
 
+if (isset($_GET['logout'])) {
+    session_destroy();
+    unset($_SESSION['username']);
+    header('location: login.php');
+  }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -20,7 +26,7 @@ include('../server.php');
 
 <!-- <navbar"> -->
   <?php
-    if($login==0){
+    if(!isset($_SESSION['username'])):
   ?>
     <header class="navbar navbar-expand-lg navbar-light bg-info">
         <div class="container px-4 px-lg-5">
@@ -32,9 +38,6 @@ include('../server.php');
               <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
                 <li class="nav-item">
                   <a class="nav-link active" aria-current="page" href="../index.php">หน้าแรก</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">เกี่ยวกับ</a>
                 </li>
               </ul>
 
@@ -73,10 +76,10 @@ include('../server.php');
         </div>
     </header>
   <?php
-    }
+    endif
   ?>
   <?php
-    if($login==1){
+    if(isset($_SESSION['username'])):
   ?>
     <header class="navbar navbar-expand-lg navbar-light bg-info">
         <div class="container px-4 px-lg-5">
@@ -88,9 +91,6 @@ include('../server.php');
                 <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="../index.php">หน้าแรก</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">เกี่ยวกับ</a>
                     </li>
                 </ul>
 
@@ -123,12 +123,12 @@ include('../server.php');
                     <div class="text-end">
                         <div class="dropdown">
                             <button class="btn btn-outline-dark dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                                username
+                                <span id="username">username</span> 
                             </button>
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                                 <li><a class="dropdown-item" href="../profile/profile.php">บัญชีของฉัน</a></li>
                                 <li><a class="dropdown-item" href="../order/order-h.php">ประวัติการเช่า</a></li>
-                                <li><a class="dropdown-item" href="#">ออกจากระบบ</a></li>
+                                <li><a class="dropdown-item" href="../index.php?loguut='1'">ออกจากระบบ</a></li>
                             </ul>
                         </div>
                     </div>
@@ -137,7 +137,7 @@ include('../server.php');
         </div>
     </header>
     <?php
-    }
+    endif
     ?>
     <div class="container px-4 px-lg-5 mt-5 ">
         <div class="d-grid gap-2 d-md-flex justify-content-md-end">
@@ -186,23 +186,33 @@ include('../server.php');
                             <p class="mt-2 mb-auto">จำนวน</p>
                         </div>
                         <div class="col-md-3 col-lg-3 col-xl-3 d-flex">
-                            <button class="btn btn-link px-2" onclick="decreaeNumber2('textbox')" style="">
+                            <button class="btn btn-link px-2" onclick="decreaeNumber2('quantity')" style="">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-dash" viewBox="0 0 16 16">
                                 <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z"/>
                             </svg>
                             </button>
 
-                            <input id="textbox" min="0" name="quantity" value="0" type="number" class="form-control form-control-sm">
+                            <input id="quantity" min="0" name="quantity" value="0" type="number" class="form-control form-control-sm">
 
-                            <button class="btn btn-link px-2" onclick="increaseNumber2('textbox')" style="">
+                            <button class="btn btn-link px-2" onclick="increaseNumber2('quantity')" style="">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
                                 <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
                             </svg>
                             </button>
                         </div>
                     </div>
+                    <div class="d-flex mt-3 ">
+                        <div class="col-md-3 col-lg-3 col-xl-3 d-flex ">
+                            <p class="mt-2 mb-auto">วันที่ต้องการเช่า</p>
+                        </div>
+                        <div class="col-md-3 col-lg-3 col-xl-3 d-flex">
+                            <div class="col-sm-9 text-secondary">
+                                <input type="number" name="date" id="date">
+                            </div>
+                        </div>
+                    </div>
                     <div class="d-flex mt-5">
-                        <button class="btn btn-outline-dark flex-shrink-0" type="button" onclick="addCard('textbox','quantityCart')">
+                        <button class="btn btn-outline-dark flex-shrink-0" type="button" onclick="addCard('quantity','quantityCart')">
                             <i class="bi-cart-fill me-1"></i>
                             เพิ่มในตะกร้า
                         </button>

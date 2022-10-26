@@ -2,6 +2,12 @@
 
 include('../server.php');
 
+if (isset($_GET['logout'])) {
+  session_destroy();
+  unset($_SESSION['username']);
+  header('location: login.php');
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -44,7 +50,7 @@ include('../server.php');
 
 <!-- <navbar"> -->
   <?php
-    if($login==0){
+    if(!isset($_SESSION['username'])):
   ?>
     <header class="navbar navbar-expand-lg navbar-light bg-info">
         <div class="container px-4 px-lg-5">
@@ -56,9 +62,6 @@ include('../server.php');
               <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
                 <li class="nav-item">
                   <a class="nav-link active" aria-current="page" href="../index.php">หน้าแรก</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">เกี่ยวกับ</a>
                 </li>
               </ul>
 
@@ -98,10 +101,10 @@ include('../server.php');
       </div>
     </header>
   <?php
-    }
+    endif
   ?>
   <?php
-    if($login==1){
+    if(isset($_SESSION['username'])):
   ?>
     <header class="navbar navbar-expand-lg navbar-light bg-info">
       <div class="container px-4 px-lg-5">
@@ -113,9 +116,6 @@ include('../server.php');
               <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
                 <li class="nav-item">
                   <a class="nav-link active" aria-current="page" href="../index.php">หน้าแรก</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">เกี่ยวกับ</a>
                 </li>
               </ul>
 
@@ -148,12 +148,12 @@ include('../server.php');
                 <div class="text-end">
                   <div class="dropdown">
                         <button class="btn btn-outline-dark dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                            username
+                            <span id="username">username</span> 
                         </button>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                             <li><a class="dropdown-item" href="../profile/profile.php">บัญชีของฉัน</a></li>
                             <li><a class="dropdown-item" href="../order/order-h.php">ประวัติการเช่า</a></li>
-                            <li><a class="dropdown-item" href="#">ออกจากระบบ</a></li>
+                            <li><a class="dropdown-item" href="../index.php?loguut='1'">ออกจากระบบ</a></li>
                         </ul>
                     </div>
                 </div>
@@ -162,7 +162,7 @@ include('../server.php');
       </div>
     </header>
   <?php
-    }
+    endif
   ?>
   <section class="checkout-wrapper pt-100">
       <div class="container">
@@ -173,10 +173,11 @@ include('../server.php');
                 <table class="table">
                   <thead>
                     <tr>
-                      <th class="product">Product</th>
-                      <th class="quantity">Quantity</th>
-                      <th class="price">Price</th>
-                      <th class="action">Action</th>
+                      <th class="product">สินค้า</th>
+                      <th class="quantity">จำนวนวัน</th>
+                      <th class="quantity">ปริมาณ</th>
+                      <th class="price">ราคา</th>
+                      <th class="action">แอคชั่น</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -194,6 +195,9 @@ include('../server.php');
                             <span>UG 0123</span>
                           </div>
                         </div>
+                      </td>
+                      <td>
+                        <p><span class="price" id="date">0 &nbsp;</span>วัน</p>
                       </td>
                       <td>
                         <div class="product-quantity d-inline-flex">
@@ -230,28 +234,23 @@ include('../server.php');
                   flex-wrap
                 ">
                 <div class="checkout-coupon">
-                  <span>Apply Coupon to get discount!</span>
-                  <form action="#">
-                    <div class="single-form form-default d-flex">
-                      <div class="form-input form">
-                        <input type="text" placeholder="Coupon Code">
-                      </div>
-                      <button class="main-btn primary-btn">Apply</button>
-                    </div>
-                  </form>
                 </div>
                 <div class="checkout-total">
                   <div class="single-total">
-                    <p class="value">Subotal Price:</p>
+                    <p class="value">ราคาสินค้า:</p>
                     <p class="price">$<span id="product_price_total">0.00</span></p>
                   </div>
                   <div class="single-total">
-                    <p class="value">Shipping Cost (+):</p>
+                    <p class="value">ค่าจัดส่ง:</p>
                     <p class="price">$<span id="shipping_charge">0.00</span></p>
                   </div>
                   <div class="single-total">
-                    <p class="value">Discount (-):</p>
+                    <p class="value">ส่วนลด:</p>
                     <p class="price">$<span id="discount">0.00</span></p>
+                  </div>
+                  <div class="single-total">
+                    <p class="value">ราคาเช่าสินค้า(จำนวนวันที่เช่า):</p>
+                    <p class="price">$<span id="price_date">0.00</span></p>
                   </div>
                   <div class="single-total total-payable">
                     <p class="value">Total Payable:</p>
@@ -264,7 +263,7 @@ include('../server.php');
                   <a href="../index.php" class="main-btn primary-btn-border">continue shopping</a>
                 </div>
                 <div class="single-btn">
-                  <a href="shipping.php" class="main-btn primary-btn">Pay now</a>
+                  <a href="payment.php" class="main-btn primary-btn">Pay now</a>
                 </div>
               </div>
             </div>

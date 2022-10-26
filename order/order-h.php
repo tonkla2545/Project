@@ -2,6 +2,12 @@
 
 include('../server.php');
 
+if (isset($_GET['logout'])) {
+  session_destroy();
+  unset($_SESSION['username']);
+  header('location: login.php');
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -43,7 +49,7 @@ include('../server.php');
 
 <!-- <header class="p-3 text-bg-info"> -->
   <?php
-    if($login==0){
+    if(!isset($_SESSION['username'])):
   ?>
     <header class="navbar navbar-expand-lg navbar-light bg-info">
         <div class="container px-4 px-lg-5">
@@ -55,9 +61,6 @@ include('../server.php');
               <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
                 <li class="nav-item">
                   <a class="nav-link active" aria-current="page" href="../index.php">หน้าแรก</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">เกี่ยวกับ</a>
                 </li>
               </ul>
 
@@ -97,10 +100,10 @@ include('../server.php');
       </div>
     </header>
   <?php
-    }
+    endif
   ?>
   <?php
-    if($login==1){
+    if(!isset($_SESSION['username'])):
   ?>
     <header class="navbar navbar-expand-lg navbar-light bg-info">
       <div class="container px-4 px-lg-5">
@@ -112,9 +115,6 @@ include('../server.php');
               <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
                 <li class="nav-item">
                   <a class="nav-link active" aria-current="page" href="../index.php">หน้าแรก</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">เกี่ยวกับ</a>
                 </li>
               </ul>
 
@@ -147,12 +147,12 @@ include('../server.php');
                 <div class="text-end">
                     <div class="dropdown">
                         <button class="btn btn-outline-dark dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                            username
+                          <span id="username">username</span> 
                         </button>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                             <li><a class="dropdown-item" href="../profile/profile.php">บัญชีของฉัน</a></li>
                             <li><a class="dropdown-item" href="#">ประวัติการเช่า</a></li>
-                            <li><a class="dropdown-item" href="#">ออกจากระบบ</a></li>
+                            <li><a class="dropdown-item" href="../index.php?loguut='1'">ออกจากระบบ</a></li>
                         </ul>
                     </div>
                 </div>
@@ -162,7 +162,7 @@ include('../server.php');
     </div>
   </header>
   <?php
-    }
+    endif
   ?>
     <section class="order-history-wrapper pt-90 pb-100">
       <div class="container">
@@ -186,13 +186,9 @@ include('../server.php');
                 <li><a class="date" href="#0">02/23/2020, 5:00PM</a></li>
               </ul>
               <div class="single-progress-bar-horizontal shipped">
+                Status:
                 <div class="progress-text">
-                  <p>Shipped</p>
-                </div>
-                <div class="progress-bar-inner">
-                  <div class="bar-inner">
-                    <div class="progress-horizontal"></div>
-                  </div>
+                  <p><span id="status"> </span></p>
                 </div>
               </div>
               <span class="order-price">$144.50</span>

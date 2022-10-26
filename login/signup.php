@@ -1,6 +1,7 @@
 <?php
 
-include('../server.php');
+    session_start();
+    include('../Data/data.php');
 
 ?>
 <!DOCTYPE html>
@@ -44,9 +45,19 @@ include('../server.php');
 
                                     <h3 class="mb-5">สมัครสมาชิก</h3>
                                     <form action="signup_db.php" method="post">
-
+                                        <?php include('errors.php');?>
+                                        <?php if(isset($_SESSION['error'])):?>
+                                            <div class="error">
+                                                <h3>
+                                                    <?php 
+                                                        echo $_SESSION['error'];
+                                                        unset($_SESSION['error']);
+                                                    ?>
+                                                </h3>
+                                            </div>
+                                        <?php endif ?>
                                         <div class="form-outline mb-2">
-                                            <input type="text" name="firstname" class="form-control form-control-lg" placeholder="Firstname">
+                                            <input type="text" name="username" class="form-control form-control-lg" placeholder="Username" id="username">
                                             <label class="form-label" for="firstname" style="margin-left: 0px;" ></label>
                                             <div class="form-notch">
                                                 <div class="form-notch-leading" style="width: 9px;"></div>
@@ -56,17 +67,7 @@ include('../server.php');
                                         </div>
 
                                         <div class="form-outline mb-2">
-                                        <input type="text" name="lastname" class="form-control form-control-lg" placeholder="Lastname">
-                                            <label class="form-label" for="lastname" style="margin-left: 0px;" ></label>
-                                            <div class="form-notch">
-                                                <div class="form-notch-leading" style="width: 9px;"></div>
-                                                <div class="form-notch-middle" style="width: 40px;"></div>
-                                                <div class="form-notch-trailing"></div>
-                                            </div>
-                                        </div>
-
-                                        <div class="form-outline mb-2">
-                                            <input type="email" id="typeEmailX-2" class="form-control form-control-lg" placeholder="Email">
+                                            <input type="email" id="typeEmailX-2" class="form-control form-control-lg" placeholder="Email" id="email">
                                             <label class="form-label" for="email" name="email" style="margin-left: 0px;" ></label>
                                             <div class="form-notch">
                                                 <div class="form-notch-leading" style="width: 9px;"></div>
@@ -76,7 +77,7 @@ include('../server.php');
                                         </div>
 
                                         <div class="form-outline mb-2">
-                                            <input type="password" name="password" class="form-control form-control-lg" placeholder="รหัสผ่าน">
+                                            <input type="password" name="password" class="form-control form-control-lg" placeholder="รหัสผ่าน" id="password">
                                             <label class="form-label" for="password" style="margin-left: 0px;"></label>
                                             <div class="form-notch">
                                                 <div class="form-notch-leading" style="width: 9px;"></div>

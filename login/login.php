@@ -44,7 +44,17 @@ include('../server.php');
 
                                     <h3 class="mb-5">เข้าสู่ระบบ</h3>
 
-                                    <form name="formlogin" action="checklogin.php">
+                                    <form name="formlogin" action="login_db.php" methon="post">
+                                        <?php if(isset($_SESSION['error'])):?>
+                                            <div class="error">
+                                                <h3>
+                                                    <?php 
+                                                        echo $_SESSION['error'];
+                                                        unset($_SESSION['error']);
+                                                    ?>
+                                                </h3>
+                                            </div>
+                                        <?php endif ?>
                                         <div class="form-outline mb-2">
                                             <input type="email" id="typeEmailX-2" class="form-control form-control-lg" placeholder="Email">
                                             <label class="form-label" for="email" name="email" style="margin-left: 0px;" ></label>

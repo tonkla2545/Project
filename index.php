@@ -1,6 +1,6 @@
 <?php
 
-  include('server.php');
+  session_start();
   // include('Data/data.php');
   // // $sql ="INSERT INTO user(user_name, email, date) VALUES(:user_name, :email, :date)";
   // // $query = $dbcon->prepare($sql);
@@ -23,6 +23,12 @@
   //     }
   // }
 
+  if (isset($_GET['logout'])) {
+    session_destroy();
+    unset($_SESSION['username']);
+    header('location: login.php');
+  }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -41,7 +47,7 @@
 
 <!-- <header class="p-3 text-bg-info"> -->
   <?php
-    if($login==0){
+    if(!isset($_SESSION['username'])):
   ?>
     <header class="navbar navbar-expand-lg navbar-light bg-info">
         <div class="container px-4 px-lg-5">
@@ -53,9 +59,6 @@
               <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
                 <li class="nav-item">
                   <a class="nav-link active" aria-current="page" href="index.php">หน้าแรก</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">เกี่ยวกับ</a>
                 </li>
               </ul>
 
@@ -95,10 +98,10 @@
       </div>
     </header>
   <?php
-    }
+    endif
   ?>
   <?php
-    if($login==1){
+    if(isset($_SESSION['username'])):
   ?>
     <header class="navbar navbar-expand-lg navbar-light bg-info">
       <div class="container px-4 px-lg-5">
@@ -110,9 +113,6 @@
               <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
                 <li class="nav-item">
                   <a class="nav-link active" aria-current="page" href="index.php">หน้าแรก</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">เกี่ยวกับ</a>
                 </li>
               </ul>
 
@@ -145,12 +145,12 @@
                 <div class="text-end">
                     <div class="dropdown">
                         <button class="btn btn-outline-dark dropdown-toggle " type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                            username
+                          <span id="username"><?php echo $_SESSION['usernames']?></span> 
                         </button>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                             <li><a class="dropdown-item" href="profile/profile.php">บัญชีของฉัน</a></li>
                             <li><a class="dropdown-item" href="order/order-h.php">ประวัติการเช่า</a></li>
-                            <li><a class="dropdown-item" href="index.php">ออกจากระบบ</a></li>
+                            <li><a class="dropdown-item" href="index.php?loguut='1'">ออกจากระบบ</a></li>
                         </ul>
                     </div>
                 </div>
@@ -160,7 +160,7 @@
     </div>
   </header>
   <?php
-    }
+    endif
   ?>
 
 <!-- ตะกร้า -->
@@ -222,14 +222,14 @@
 
 
   <!-- หมวดหมู่ -->
-  <div class="container">
+  <!-- <div class="container"> -->
     <!-- <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top"> -->
-    <div class="col-md-4 d-flex align-items-center">
+    <!-- <div class="col-md-4 d-flex align-items-center">
       <h4>หมวดหมู่</h4>
-    </div>
+    </div> -->
       
     <!-- หมวดหมู่  -->
-    <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5 py-2 my-2">
+    <!-- <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5 py-2 my-2">
       <div class="col mb-3">
         <h5>เสื้อผ้าผู้ชาย</h5>
         <ul class="nav flex">
@@ -276,7 +276,7 @@
         </ul>
       </div>
 
-    </footer>
+    </footer> -->
 
   </div>
 </body>
