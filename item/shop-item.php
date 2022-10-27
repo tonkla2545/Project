@@ -200,16 +200,6 @@ if (isset($_GET['logout'])) {
                             </button>
                         </div>
                     </div>
-                    <div class="d-flex mt-3 ">
-                        <div class="col-md-3 col-lg-3 col-xl-3 d-flex ">
-                            <p class="mt-2 mb-auto">วันที่ต้องการเช่า</p>
-                        </div>
-                        <div class="col-md-3 col-lg-3 col-xl-3 d-flex">
-                            <div class="col-sm-9 text-secondary">
-                                <input type="number" name="date" id="date">
-                            </div>
-                        </div>
-                    </div>
                     <div class="d-flex mt-5">
                         <button class="btn btn-outline-dark flex-shrink-0" type="button" onclick="addCard('quantity','quantityCart')">
                             <i class="bi-cart-fill me-1"></i>
