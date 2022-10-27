@@ -129,10 +129,12 @@ if (isset($_GET['logout'])) {
               </ul>
               <div class="single-progress-bar-horizontal shipped">
                 <div class="progress-text">
-                  <p><span id="status"> </span></p>
+                  สถานะสินค้า:<span id="status"> </span>
                 </div>
+              </div>
+              <div class="single-progress-bar-horizontal shipped">
                 <div class="progress-track">
-                  <p>Track Order</p>
+                  <p>Track Order<span id="trackID"> </span></p>
                 </div>
               </div>
               <span class="order-price">$144.50</span>

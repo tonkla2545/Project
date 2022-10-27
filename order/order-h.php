@@ -137,10 +137,10 @@ if (isset($_GET['logout'])) {
             <a class="product" href="order-item.php"><h4 class="order-id">Order ID: 1234567890</h4></a>
               <ul class="order-meta">
                 <li><a class="product" href="order-item.php"><span id="product">4 &nbsp;</span>Product</a></li>
-                <li><a class="date" href="#0">02/23/2020, 5:00PM</a></li>
+                <li><a class="date" href="order-item.php">02/23/2020, 5:00PM</a></li>
               </ul>
               <div class="single-progress-bar-horizontal shipped">
-                สถานะสินค้า:
+                สถานะสินค้า: <span id="status"></span>
                 <div class="progress-text">
                   <p><span id="status"> </span></p>
                 </div>
