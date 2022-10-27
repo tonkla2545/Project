@@ -1,12 +1,13 @@
 <?php
 
-include('../server.php');
+  session_start();
+  include('../Data/data.php');
 
-if (isset($_GET['logout'])) {
-  session_destroy();
-  unset($_SESSION['username']);
-  header('location: login.php');
-}
+  if (isset($_GET['logout'])) {
+    session_destroy();
+    unset($_SESSION['email']);
+    header('location: login.php');
+  }
 
 ?>
 <!DOCTYPE html>
@@ -26,11 +27,11 @@ if (isset($_GET['logout'])) {
 
 <!-- <header class="p-3 text-bg-info"> -->
   <?php
-    if(!isset($_SESSION['username'])):
+    if(!isset($_SESSION['email'])):
   ?>
     <header class="navbar navbar-expand-lg navbar-light bg-info">
         <div class="container px-4 px-lg-5">
-            <a class="navbar-brand" href="index.php">เช่าสูทผู้ชาย</a>
+            <a class="navbar-brand" href="../index.php">เช่าสูทผู้ชาย</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button> 
@@ -42,7 +43,6 @@ if (isset($_GET['logout'])) {
               </ul>
 
                 <section class="w-50 p-1 pb-1 d-flex justify-content-center align-items-center flex-column me-lg-auto mb-2 justify-content-center mb-md-0">
-                <!-- <form class="nav col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3 me-lg-auto mb-2 justify-content-center mb-md-0" role="search"> -->
                     <form class="input-group " role="search">
                     <input type="search" class="form-control form-control-white text-bg-white " placeholder="Search..." aria-label="Search">
                     <button type="button" class="btn btn-primary">
@@ -80,7 +80,7 @@ if (isset($_GET['logout'])) {
     endif
   ?>
   <?php
-    if(isset($_SESSION['username'])):
+    if(isset($_SESSION['email'])):
   ?>
     <header class="navbar navbar-expand-lg navbar-light bg-info">
       <div class="container px-4 px-lg-5">
@@ -95,41 +95,18 @@ if (isset($_GET['logout'])) {
                 </li>
               </ul>
 
-              <section class="w-50 p-1 pb-1 d-flex justify-content-center align-items-center flex-column me-lg-auto mb-2 justify-content-center mb-md-0">
-
-                  <form class="input-group " role="search">
-                  <input type="search" class="form-control form-control-white text-bg-white " placeholder="Search..." aria-label="Search">
-                  <button type="button" class="btn btn-primary">
-                      <svg height="19" viewBox="0 0 19 19" width="19" class="">
-                      <g fill-rule="evenodd" stroke="none" stroke-width="1">
-                          <g transform="translate(-1016 -32)">
-                          <g>
-                              <g transform="translate(405 21)">
-                              <g transform="translate(611 11)">
-                                  <path d="m8 16c4.418278 0 8-3.581722 8-8s-3.581722-8-8-8-8 3.581722-8 8 3.581722 8 8 8zm0-2c-3.3137085 0-6-2.6862915-6-6s2.6862915-6 6-6 6 2.6862915 6 6-2.6862915 6-6 6z">
-                                  </path>
-                                  <path d="m12.2972351 13.7114222 4.9799555 4.919354c.3929077.3881263 1.0260608.3842503 1.4141871-.0086574.3881263-.3929076.3842503-1.0260607-.0086574-1.414187l-4.9799554-4.919354c-.3929077-.3881263-1.0260608-.3842503-1.4141871.0086573-.3881263.3929077-.3842503 1.0260608.0086573 1.4141871z">
-                                  </path>
-                              </g>
-                              </g>
-                          </g>
-                          </g>
-                      </g>
-                      </svg>
-                  </button>
-                  </form>
-              </section>
+              
 
               <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                 <div class="text-end">
                     <div class="dropdown">
                         <button class="btn btn-outline-dark dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                          <span id="username">username</span> 
+                          <span id="username"><?php echo $_SESSION['email']?></span> 
                         </button>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                             <li><a class="dropdown-item" href="profile.php">บัญชีของฉัน</a></li>
                             <li><a class="dropdown-item" href="../order/order-h.php">ประวัติการเช่า</a></li>
-                            <li><a class="dropdown-item" href="../index.php?loguut='1'">ออกจากระบบ</a></li>
+                            <li><a class="dropdown-item" href="../index.php?logout='1'">ออกจากระบบ</a></li>
                         </ul>
                     </div>
                 </div>

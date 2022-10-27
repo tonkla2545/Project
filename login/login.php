@@ -1,6 +1,7 @@
 <?php
 
-include('../server.php');
+    session_start();
+    include('../Data/data.php');
 
 ?>
 <!DOCTYPE html>
@@ -44,7 +45,8 @@ include('../server.php');
 
                                     <h3 class="mb-5">เข้าสู่ระบบ</h3>
 
-                                    <form name="formlogin" action="login_db.php" methon="post">
+                                    <form action="login_db.php" method="post">
+                                        <?php include('errors.php');?>
                                         <?php if(isset($_SESSION['error'])):?>
                                             <div class="error">
                                                 <h3>
@@ -56,7 +58,7 @@ include('../server.php');
                                             </div>
                                         <?php endif ?>
                                         <div class="form-outline mb-2">
-                                            <input type="email" id="typeEmailX-2" class="form-control form-control-lg" placeholder="Email">
+                                            <input type="email" id="email" class="form-control form-control-lg" placeholder="Email" name="email">
                                             <label class="form-label" for="email" name="email" style="margin-left: 0px;" ></label>
                                             <div class="form-notch">
                                                 <div class="form-notch-leading" style="width: 9px;"></div>
@@ -66,7 +68,7 @@ include('../server.php');
                                         </div>
 
                                         <div class="form-outline mb-2">
-                                            <input type="password" id="typePasswordX-2" class="form-control form-control-lg" placeholder="รหัสผ่าน">
+                                            <input type="password" id="password" class="form-control form-control-lg" placeholder="รหัสผ่าน" name="password">
                                             <label class="form-label" for="password" name="password" style="margin-left: 0px;"></label>
                                             <div class="form-notch">
                                                 <div class="form-notch-leading" style="width: 9px;"></div>
@@ -74,15 +76,15 @@ include('../server.php');
                                                 <div class="form-notch-trailing"></div>
                                             </div>
                                         </div>
+
+                                        <!-- Checkbox -->
+                                        <div class="form-check d-flex justify-content-start mb-4">
+                                            <input class="form-check-input" type="checkbox" value="" id="form1Example3">
+                                            <label class="form-check-label" for="form1Example3"> จดจำรหัสผ่าน </label>
+                                        </div>
+
+                                        <button class="btn btn-primary btn-lg btn-block" type="submit" name="login_user">เข้าสู่ระบบ</button>
                                     </form>
-
-                                    <!-- Checkbox -->
-                                    <div class="form-check d-flex justify-content-start mb-4">
-                                        <input class="form-check-input" type="checkbox" value="" id="form1Example3">
-                                        <label class="form-check-label" for="form1Example3"> จดจำรหัสผ่าน </label>
-                                    </div>
-
-                                    <button class="btn btn-primary btn-lg btn-block" type="submit">เข้าสู่ระบบ</button>
 
                                     <hr class="my-4">
                                     <p>ยังไม่ได้เป็นสมาชิกใช่ไหม คลื๊กที่นึ้เพื่อสมัครสมาชิก <a href="signup.php">สมัครสมาชิก</a></p>

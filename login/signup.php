@@ -1,7 +1,7 @@
 <?php
 
     session_start();
-    // include('../Data/data.php');
+    include('../Data/data.php');
 
 ?>
 <!DOCTYPE html>
@@ -44,8 +44,8 @@
                                 <div class="card-body p-5 text-center">
 
                                     <h3 class="mb-5">สมัครสมาชิก</h3>
-                                    <form action="signup_db.php" method="post">
-                                        <?php include('../error.php');?>
+                                    <form action="signup_bd.php" method="post">
+                                        <?php include('errors.php');?>
                                         <?php if(isset($_SESSION['error'])):?>
                                             <div class="error">
                                                 <h3>
@@ -58,7 +58,7 @@
                                         <?php endif ?>
                                         <div class="form-outline mb-2">
                                             <input type="text" name="username" class="form-control form-control-lg" placeholder="Username" id="username">
-                                            <label class="form-label" for="firstname" style="margin-left: 0px;" ></label>
+                                            <label class="form-label" for="username" style="margin-left: 0px;" ></label>
                                             <div class="form-notch">
                                                 <div class="form-notch-leading" style="width: 9px;"></div>
                                                 <div class="form-notch-middle" style="width: 40px;"></div>
@@ -67,7 +67,7 @@
                                         </div>
 
                                         <div class="form-outline mb-2">
-                                            <input type="email" id="typeEmailX-2" class="form-control form-control-lg" placeholder="Email" id="email">
+                                            <input type="email" name="email" class="form-control form-control-lg" placeholder="Email" id="email">
                                             <label class="form-label" for="email" name="email" style="margin-left: 0px;" ></label>
                                             <div class="form-notch">
                                                 <div class="form-notch-leading" style="width: 9px;"></div>
@@ -87,8 +87,8 @@
                                         </div>
 
                                         <div class="form-outline mb-2">
-                                            <input type="password" name="c_password" class="form-control form-control-lg" placeholder="ยืนยันรหัสผ่าน">
-                                            <label class="form-label" for="confiem password" style="margin-left: 0px;"></label>
+                                            <input type="password" name="c_password" class="form-control form-control-lg" placeholder="ยืนยันรหัสผ่าน" id="c_password">
+                                            <label class="form-label" for="c_password" style="margin-left: 0px;"></label>
                                             <div class="form-notch">
                                                 <div class="form-notch-leading" style="width: 9px;"></div>
                                                 <div class="form-notch-middle" style="width: 64.8px;"></div>

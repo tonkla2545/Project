@@ -1,7 +1,7 @@
 <?php
 
   session_start();
-  // include('Data/data.php');
+  include('Data/data.php');
   // // $sql ="INSERT INTO user(user_name, email, date) VALUES(:user_name, :email, :date)";
   // // $query = $dbcon->prepare($sql);
   // // $query ->bindParam(':user_name', $name, PDO::PARAM_STR);
@@ -23,10 +23,11 @@
   //     }
   // }
 
+
   if (isset($_GET['logout'])) {
     session_destroy();
-    unset($_SESSION['username']);
-    header('location: login.php');
+    unset($_SESSION['email']);
+    header('location: login/login.php');
   }
 
 ?>
@@ -47,7 +48,7 @@
 
 <!-- <header class="p-3 text-bg-info"> -->
   <?php
-    if(!isset($_SESSION['username'])):
+    if(!isset($_SESSION['email'])):
   ?>
     <header class="navbar navbar-expand-lg navbar-light bg-info">
         <div class="container px-4 px-lg-5">
@@ -100,7 +101,7 @@
     endif
   ?>
   <?php
-    if(isset($_SESSION['username'])):
+    if(isset($_SESSION['email'])):
   ?>
     <header class="navbar navbar-expand-lg navbar-light bg-info">
       <div class="container px-4 px-lg-5">
@@ -120,12 +121,12 @@
                 <div class="text-end">
                     <div class="dropdown">
                         <button class="btn btn-outline-dark dropdown-toggle " type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                          <span id="username"><?php echo $_SESSION['usernames']?></span> 
+                          <span id="username"><?php echo $_SESSION['email']?></span> 
                         </button>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                             <li><a class="dropdown-item" href="profile/profile.php">บัญชีของฉัน</a></li>
                             <li><a class="dropdown-item" href="order/order-h.php">ประวัติการเช่า</a></li>
-                            <li><a class="dropdown-item" href="index.php?loguut='1'">ออกจากระบบ</a></li>
+                            <li><a class="dropdown-item" href="index.php?logout='1'">ออกจากระบบ</a></li>
                         </ul>
                     </div>
                 </div>

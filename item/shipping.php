@@ -1,12 +1,13 @@
 <?php
 
-include('../server.php');
+  session_start();
+  include('../Data/data.php');
 
-if (isset($_GET['logout'])) {
-  session_destroy();
-  unset($_SESSION['username']);
-  header('location: login.php');
-}
+  if (isset($_GET['logout'])) {
+    session_destroy();
+    unset($_SESSION['email']);
+    header('location: login.php');
+  }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -50,7 +51,7 @@ if (isset($_GET['logout'])) {
 
 <!-- <navbar"> -->
   <?php
-    if(!isset($_SESSION['username'])):
+    if(!isset($_SESSION['email'])):
   ?>
     <header class="navbar navbar-expand-lg navbar-light bg-info">
         <div class="container px-4 px-lg-5">
@@ -81,7 +82,7 @@ if (isset($_GET['logout'])) {
     endif
   ?>
   <?php
-    if(isset($_SESSION['username'])):
+    if(isset($_SESSION['email'])):
   ?>
     <header class="navbar navbar-expand-lg navbar-light bg-info">
       <div class="container px-4 px-lg-5">
@@ -102,12 +103,12 @@ if (isset($_GET['logout'])) {
                 <div class="text-end">
                   <div class="dropdown">
                         <button class="btn btn-outline-dark dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                          <span id="username">username</span> 
+                          <span id="username"><?php echo $_SESSION['email']?></span> 
                         </button>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                             <li><a class="dropdown-item" href="../profile/profile.php">บัญชีของฉัน</a></li>
                             <li><a class="dropdown-item" href="../order/order-h.php">ประวัติการเช่า</a></li>
-                            <li><a class="dropdown-item" href="../index.php?loguut='1'">ออกจากระบบ</a></li>
+                            <li><a class="dropdown-item" href="../index.php?logout='1'">ออกจากระบบ</a></li>
                         </ul>
                     </div>
                 </div>
