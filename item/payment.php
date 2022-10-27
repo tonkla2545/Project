@@ -2,6 +2,12 @@
 
 include('../server.php');
 
+if (isset($_GET['logout'])) {
+  session_destroy();
+  unset($_SESSION['username']);
+  header('location: login.php');
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -9,7 +15,7 @@ include('../server.php');
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BorrowTime</title>
+    <title>เช่าสูทผู้ชาย</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
@@ -45,11 +51,11 @@ include('../server.php');
 
 <!-- <navbar"> -->
   <?php
-    if($login==0){
+    if(!isset($_SESSION['username'])):
   ?>
     <header class="navbar navbar-expand-lg navbar-light bg-info">
         <div class="container px-4 px-lg-5">
-            <a class="navbar-brand" href="../index.php">Start Bootstrap</a>
+            <a class="navbar-brand" href="../index.php">เช่าสูทผู้ชาย</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button> 
@@ -57,9 +63,6 @@ include('../server.php');
               <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
                 <li class="nav-item">
                   <a class="nav-link active" aria-current="page" href="../index.php">หน้าแรก</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">เกี่ยวกับ</a>
                 </li>
               </ul>
 
@@ -99,14 +102,14 @@ include('../server.php');
       </div>
     </header>
   <?php
-    }
+    endif
   ?>
   <?php
-    if($login==1){
+    if(isset($_SESSION['username'])):
   ?>
     <header class="navbar navbar-expand-lg navbar-light bg-info">
       <div class="container px-4 px-lg-5">
-          <a class="navbar-brand" href="../index.php">Start Bootstrap</a>
+          <a class="navbar-brand" href="../index.php">เช่าสูทผู้ชาย</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button> 
@@ -114,9 +117,6 @@ include('../server.php');
               <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
                 <li class="nav-item">
                   <a class="nav-link active" aria-current="page" href="../index.php">หน้าแรก</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">เกี่ยวกับ</a>
                 </li>
               </ul>
 
@@ -149,12 +149,12 @@ include('../server.php');
                 <div class="text-end">
                   <div class="dropdown">
                         <button class="btn btn-outline-dark dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                            username
+                          <span id="username">username</span> 
                         </button>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                             <li><a class="dropdown-item" href="../profile/profile.php">บัญชีของฉัน</a></li>
                             <li><a class="dropdown-item" href="../order/order-h.php">ประวัติการเช่า</a></li>
-                            <li><a class="dropdown-item" href="#">ออกจากระบบ</a></li>
+                            <li><a class="dropdown-item" href="../index.php?loguut='1'">ออกจากระบบ</a></li>
                         </ul>
                     </div>
                 </div>
@@ -163,23 +163,23 @@ include('../server.php');
       </div>
     </header>
   <?php
-    }
+    endif
   ?>
 <section class="checkout-wrapper pt-50">
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-lg-8">
             <div class="checkout-payment-style-1 mt-50">
-              <h6 class="title">Payment Info</h6>
+              <h6 class="title">ข้อมูลการชำระเงิน</h6>
               <div class="checkout-payment-form">
                 <div class="single-form form-default">
-                  <label>Cardholder Name</label>
+                  <label>ชื่อผู้ถือบัตร</label>
                   <div class="form-input form">
                     <input type="text" placeholder="Cardholder Name">
                   </div>
                 </div>
                 <div class="single-form form-default">
-                  <label>Card Number</label>
+                  <label>หมายเลขบัตร</label>
                   <div class="form-input form">
                     <input id="credit-input" type="text" placeholder="0000 0000 0000 0000">
                     <img src="../img/card.png" alt="card">
@@ -187,7 +187,7 @@ include('../server.php');
                 </div>
                 <div class="payment-card-info">
                   <div class="single-form form-default">
-                    <label>Expiration</label>
+                    <label>วันหมดอายุ</label>
                     <div class="expiration d-flex">
                       <div class="form-input form">
                         <input type="text" placeholder="MM">
@@ -205,7 +205,7 @@ include('../server.php');
                   </div>
                 </div>
                 <div class="single-form form-default">
-                  <button class="main-btn primary-btn">pay now</button>
+                  <button class="main-btn primary-btn">ชำละเงิน</button>
                 </div>
               </div>
             </div>
@@ -215,7 +215,7 @@ include('../server.php');
               <div class="accordion" id="accordionExample">
                 <div class="card">
                   <div class="card-header" id="headingOne">
-                    <a href="javascript:void(0)" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">Selected Products</a>
+                    <a href="javascript:void(0)" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">สินค้าที่เลือก</a>
                   </div>
 
                   <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
@@ -317,28 +317,24 @@ include('../server.php');
                       <div class="pricing-table">
                         <div class="sub-total-price">
                           <div class="total-price">
-                            <p class="value">Subotal Price:</p>
+                            <p class="value">ราคาสินค้า:</p>
                             <p class="price">$144.00</p>
                           </div>
-                          <div class="total-price shipping">
-                            <p class="value">Subotal Price:</p>
-                            <p class="price">$10.50</p>
-                          </div>
                           <div class="total-price discount">
-                            <p class="value">Subotal Price:</p>
+                            <p class="value">ส่วนลด:</p>
                             <p class="price">$10.00</p>
                           </div>
                         </div>
 
                         <div class="total-payable">
                           <div class="payable-price">
-                            <p class="value">Subotal Price:</p>
+                            <p class="value">ราคารวมทั้งหมด:</p>
                             <p class="price">$164.50</p>
                           </div>
                         </div>
 
                         <div class="price-table-btn">
-                          <a href="#" class="main-btn primary-btn-border">edit shopping cart</a>
+                          <a href="cart.php" class="main-btn primary-btn-border">แก้ไขตะกร้าสินค้า</a>
                         </div>
                       </div>
                     </div>
@@ -347,36 +343,9 @@ include('../server.php');
 
                 <div class="card">
                   <div class="card-header" id="headingTwo">
-                    <a href="javascript:void(0)" class="collapsed" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">Personal Details</a>
+                    <a href="javascript:void(0)" class="collapsed" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">ข้อมูลส่วนตัว</a>
                   </div>
                   <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
-                    <div class="card-body">
-                      <div class="checkout-sidebar-details">
-                        <div class="single-details">
-                          <p class="info">Jhone Doe</p>
-                          <p class="info">doejhon@email.com</p>
-                          <p class="info">+123 456 789 0234</p>
-                        </div>
-                        <div class="single-details">
-                          <h6 class="title">Mailing Address</h6>
-                          <p class="info">
-                            Company Inc., 8901 Marmora Road, <br>
-                            Glasgow, D04 89GR.
-                          </p>
-                        </div>
-                        <div class="details-btn">
-                          <a href="#" class="main-btn primary-btn-border">edit Information</a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="card">
-                  <div class="card-header" id="headingThree">
-                    <a href="javascript:void(0)" class="" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">Shipping Address</a>
-                  </div>
-                  <div id="collapseThree" class="collapse show" aria-labelledby="headingThree" data-parent="#accordionExample" style="">
                     <div class="card-body">
                       <div class="checkout-sidebar-details">
                         <div class="single-details">

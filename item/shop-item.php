@@ -2,6 +2,12 @@
 
 include('../server.php');
 
+if (isset($_GET['logout'])) {
+    session_destroy();
+    unset($_SESSION['username']);
+    header('location: login.php');
+  }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -9,7 +15,7 @@ include('../server.php');
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BorrowTime</title>
+    <title>เช่าสูทผู้ชาย</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
@@ -20,11 +26,11 @@ include('../server.php');
 
 <!-- <navbar"> -->
   <?php
-    if($login==0){
+    if(!isset($_SESSION['username'])):
   ?>
     <header class="navbar navbar-expand-lg navbar-light bg-info">
         <div class="container px-4 px-lg-5">
-            <a class="navbar-brand" href="../index.php">Start Bootstrap</a>
+            <a class="navbar-brand" href="../index.php">เช่าสูทผู้ชาย</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button> 
@@ -32,9 +38,6 @@ include('../server.php');
               <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
                 <li class="nav-item">
                   <a class="nav-link active" aria-current="page" href="../index.php">หน้าแรก</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">เกี่ยวกับ</a>
                 </li>
               </ul>
 
@@ -73,14 +76,14 @@ include('../server.php');
         </div>
     </header>
   <?php
-    }
+    endif
   ?>
   <?php
-    if($login==1){
+    if(isset($_SESSION['username'])):
   ?>
     <header class="navbar navbar-expand-lg navbar-light bg-info">
         <div class="container px-4 px-lg-5">
-            <a class="navbar-brand" href="../index.php">Start Bootstrap</a>
+            <a class="navbar-brand" href="../index.php">เช่าสูทผู้ชาย</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button> 
@@ -88,9 +91,6 @@ include('../server.php');
                 <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="../index.php">หน้าแรก</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">เกี่ยวกับ</a>
                     </li>
                 </ul>
 
@@ -123,12 +123,12 @@ include('../server.php');
                     <div class="text-end">
                         <div class="dropdown">
                             <button class="btn btn-outline-dark dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                                username
+                                <span id="username">username</span> 
                             </button>
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                                 <li><a class="dropdown-item" href="../profile/profile.php">บัญชีของฉัน</a></li>
                                 <li><a class="dropdown-item" href="../order/order-h.php">ประวัติการเช่า</a></li>
-                                <li><a class="dropdown-item" href="#">ออกจากระบบ</a></li>
+                                <li><a class="dropdown-item" href="../index.php?loguut='1'">ออกจากระบบ</a></li>
                             </ul>
                         </div>
                     </div>
@@ -137,7 +137,7 @@ include('../server.php');
         </div>
     </header>
     <?php
-    }
+    endif
     ?>
     <div class="container px-4 px-lg-5 mt-5 ">
         <div class="d-grid gap-2 d-md-flex justify-content-md-end">
@@ -145,7 +145,7 @@ include('../server.php');
                 <button class="btn btn-outline-dark" type="submit">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart-fill" viewBox="0 0 16 16">
                     <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
-                </svg>Cart
+                </svg>ตะกร้า
                 <span class="badge bg-dark text-white ms-1 rounded-pill" id="quantityCart">0</span>
                 </button>
             </a>
@@ -157,7 +157,6 @@ include('../server.php');
             <div class="row gx-4 gx-lg-5 align-items-center">
                 <div class="col-md-6"><img class="card-img-top mb-5 mb-md-0" src="https://dummyimage.com/600x700/dee2e6/6c757d.jpg" alt="..." /></div>
                 <div class="col-md-6">
-                    <div class="small mb-1">SKU: BST-498</div>
                     <h1 class="display-5 fw-bolder">Shop item template</h1>
                     <div class="fs-5 mb-5">
                         <span class="text-decoration-line-through">$45.00</span>
@@ -186,15 +185,15 @@ include('../server.php');
                             <p class="mt-2 mb-auto">จำนวน</p>
                         </div>
                         <div class="col-md-3 col-lg-3 col-xl-3 d-flex">
-                            <button class="btn btn-link px-2" onclick="decreaeNumber2('textbox')" style="">
+                            <button class="btn btn-link px-2" onclick="decreaeNumber2('quantity')" style="">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-dash" viewBox="0 0 16 16">
                                 <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z"/>
                             </svg>
                             </button>
 
-                            <input id="textbox" min="0" name="quantity" value="0" type="number" class="form-control form-control-sm">
+                            <input id="quantity" min="0" name="quantity" value="0" type="number" class="form-control form-control-sm">
 
-                            <button class="btn btn-link px-2" onclick="increaseNumber2('textbox')" style="">
+                            <button class="btn btn-link px-2" onclick="increaseNumber2('quantity')" style="">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
                                 <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
                             </svg>
@@ -202,7 +201,7 @@ include('../server.php');
                         </div>
                     </div>
                     <div class="d-flex mt-5">
-                        <button class="btn btn-outline-dark flex-shrink-0" type="button" onclick="addCard('textbox','quantityCart')">
+                        <button class="btn btn-outline-dark flex-shrink-0" type="button" onclick="addCard('quantity','quantityCart')">
                             <i class="bi-cart-fill me-1"></i>
                             เพิ่มในตะกร้า
                         </button>
@@ -214,7 +213,7 @@ include('../server.php');
     <!-- Related items section-->
     <section class="py-5 bg-light">
         <div class="container px-4 px-lg-5 mt-5">
-            <h2 class="fw-bolder mb-4">Related products</h2>
+            <h2 class="fw-bolder mb-4">สินค้าที่เกี่ยวข้อง</h2>
             <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 ">
                 <?php
                     for($i=1;$i<=4;$i++){
@@ -234,7 +233,7 @@ include('../server.php');
                         </div>
                         <!-- Product actions-->
                         <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">View options</a></div>
+                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="shop-item.php">ดูสินค้า</a></div>
                         </div>
                     </div>
                 </div>
@@ -244,10 +243,6 @@ include('../server.php');
             </div>
         </div>
     </section>
-    <!-- Footer-->
-    <footer class="py-5 bg-dark">
-        <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Your Website 2022</p></div>
-    </footer>
     <script src="../js/scripts.js"></script>
 </body>
 </html>

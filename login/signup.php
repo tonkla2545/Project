@@ -1,6 +1,7 @@
 <?php
 
-include('../server.php');
+    session_start();
+    include('../Data/data.php');
 
 ?>
 <!DOCTYPE html>
@@ -9,7 +10,7 @@ include('../server.php');
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BorrowTime</title>
+    <title>เช่าสูทผู้ชาย</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
@@ -19,7 +20,7 @@ include('../server.php');
 <body>
     <header class="navbar navbar-expand-lg navbar-light bg-info">
         <div class="container px-4 px-lg-5">
-            <a class="navbar-brand" href="../index.php">Start Bootstrap</a>
+            <a class="navbar-brand" href="../index.php">เช่าสูทผู้ชาย</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler">
                 <span class="navbar-toggler-icon"></span>
             </button> 
@@ -44,9 +45,19 @@ include('../server.php');
 
                                     <h3 class="mb-5">สมัครสมาชิก</h3>
                                     <form action="signup_db.php" method="post">
-
+                                        <?php include('../error.php');?>
+                                        <?php if(isset($_SESSION['error'])):?>
+                                            <div class="error">
+                                                <h3>
+                                                    <?php 
+                                                        echo $_SESSION['error'];
+                                                        unset($_SESSION['error']);
+                                                    ?>
+                                                </h3>
+                                            </div>
+                                        <?php endif ?>
                                         <div class="form-outline mb-2">
-                                            <input type="text" name="firstname" class="form-control form-control-lg" placeholder="Firstname">
+                                            <input type="text" name="username" class="form-control form-control-lg" placeholder="Username" id="username">
                                             <label class="form-label" for="firstname" style="margin-left: 0px;" ></label>
                                             <div class="form-notch">
                                                 <div class="form-notch-leading" style="width: 9px;"></div>
@@ -56,17 +67,7 @@ include('../server.php');
                                         </div>
 
                                         <div class="form-outline mb-2">
-                                        <input type="text" name="lastname" class="form-control form-control-lg" placeholder="Lastname">
-                                            <label class="form-label" for="lastname" style="margin-left: 0px;" ></label>
-                                            <div class="form-notch">
-                                                <div class="form-notch-leading" style="width: 9px;"></div>
-                                                <div class="form-notch-middle" style="width: 40px;"></div>
-                                                <div class="form-notch-trailing"></div>
-                                            </div>
-                                        </div>
-
-                                        <div class="form-outline mb-2">
-                                            <input type="email" id="typeEmailX-2" class="form-control form-control-lg" placeholder="Email">
+                                            <input type="email" id="typeEmailX-2" class="form-control form-control-lg" placeholder="Email" id="email">
                                             <label class="form-label" for="email" name="email" style="margin-left: 0px;" ></label>
                                             <div class="form-notch">
                                                 <div class="form-notch-leading" style="width: 9px;"></div>
@@ -76,7 +77,7 @@ include('../server.php');
                                         </div>
 
                                         <div class="form-outline mb-2">
-                                            <input type="password" name="password" class="form-control form-control-lg" placeholder="รหัสผ่าน">
+                                            <input type="password" name="password" class="form-control form-control-lg" placeholder="รหัสผ่าน" id="password">
                                             <label class="form-label" for="password" style="margin-left: 0px;"></label>
                                             <div class="form-notch">
                                                 <div class="form-notch-leading" style="width: 9px;"></div>

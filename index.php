@@ -1,7 +1,28 @@
 <?php
 
   include('server.php');
-  
+  // include('Data/data.php');
+  // // $sql ="INSERT INTO user(user_name, email, date) VALUES(:user_name, :email, :date)";
+  // // $query = $dbcon->prepare($sql);
+  // // $query ->bindParam(':user_name', $name, PDO::PARAM_STR);
+  // // $query ->bindParam(':email', $email, PDO::PARAM_STR);
+  // // $query ->bindParam(':date', $date, PDO::PARAM_STR);
+
+  // // $name = "Chaloem";
+  // // $email = "Chaloemphon19545@gmail.com";
+  // // $data = Date('Y-m-d');
+  // $ssql = "SELECT * FROM users";
+  // $query = $dbcon->prepare($sql);
+  // $query->execute();
+  // $result = $query->fetchAll(PDO::FETCH_OBJ);
+  // if ($query->rowCount() > 0) {
+  //     foreach($result as $res){
+  //       echo $res->name."<br>";
+  //       echo $res->email."<br>";
+  //       echo $res->date."<br>";
+  //     }
+  // }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -9,7 +30,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BorrowTime</title>
+    <title>เช่าสูทผู้ชาย</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
@@ -20,11 +41,11 @@
 
 <!-- <header class="p-3 text-bg-info"> -->
   <?php
-    if($login==0){
+    if(!isset($_SESSION['username'])):
   ?>
     <header class="navbar navbar-expand-lg navbar-light bg-info">
         <div class="container px-4 px-lg-5">
-            <a class="navbar-brand" href="index.php">Start Bootstrap</a>
+            <a class="navbar-brand" href="index.php">เช่าสูทผู้ชาย</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button> 
@@ -32,9 +53,6 @@
               <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
                 <li class="nav-item">
                   <a class="nav-link active" aria-current="page" href="index.php">หน้าแรก</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">เกี่ยวกับ</a>
                 </li>
               </ul>
 
@@ -74,14 +92,14 @@
       </div>
     </header>
   <?php
-    }
+    endif
   ?>
   <?php
-    if($login==1){
+    if(isset($_SESSION['username'])):
   ?>
     <header class="navbar navbar-expand-lg navbar-light bg-info">
       <div class="container px-4 px-lg-5">
-          <a class="navbar-brand" href="index.php">Start Bootstrap</a>
+          <a class="navbar-brand" href="index.php">เช่าสูทผู้ชาย</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button> 
@@ -89,9 +107,6 @@
               <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
                 <li class="nav-item">
                   <a class="nav-link active" aria-current="page" href="index.php">หน้าแรก</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">เกี่ยวกับ</a>
                 </li>
               </ul>
 
@@ -124,12 +139,12 @@
                 <div class="text-end">
                     <div class="dropdown">
                         <button class="btn btn-outline-dark dropdown-toggle " type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                            username
+                          <span id="username"><?php echo $_SESSION['usernames']?></span> 
                         </button>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                             <li><a class="dropdown-item" href="profile/profile.php">บัญชีของฉัน</a></li>
                             <li><a class="dropdown-item" href="order/order-h.php">ประวัติการเช่า</a></li>
-                            <li><a class="dropdown-item" href="index.php">ออกจากระบบ</a></li>
+                            <li><a class="dropdown-item" href="index.php?loguut='1'">ออกจากระบบ</a></li>
                         </ul>
                     </div>
                 </div>
@@ -139,7 +154,7 @@
     </div>
   </header>
   <?php
-    }
+    endif
   ?>
 
 <!-- ตะกร้า -->
@@ -149,7 +164,7 @@
           <button class="btn btn-outline-dark" type="submit">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart-fill" viewBox="0 0 16 16">
               <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
-            </svg>Cart
+            </svg>ตะกร้า
             <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
           </button>
         </a>
@@ -201,14 +216,14 @@
 
 
   <!-- หมวดหมู่ -->
-  <div class="container">
+  <!-- <div class="container"> -->
     <!-- <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top"> -->
-    <div class="col-md-4 d-flex align-items-center">
+    <!-- <div class="col-md-4 d-flex align-items-center">
       <h4>หมวดหมู่</h4>
-    </div>
+    </div> -->
       
     <!-- หมวดหมู่  -->
-    <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5 py-2 my-2">
+    <!-- <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5 py-2 my-2">
       <div class="col mb-3">
         <h5>เสื้อผ้าผู้ชาย</h5>
         <ul class="nav flex">
@@ -255,7 +270,7 @@
         </ul>
       </div>
 
-    </footer>
+    </footer> -->
 
   </div>
 </body>

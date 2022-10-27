@@ -2,6 +2,12 @@
 
 include('../server.php');
 
+if (isset($_GET['logout'])) {
+  session_destroy();
+  unset($_SESSION['username']);
+  header('location: login.php');
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -9,7 +15,7 @@ include('../server.php');
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BorrowTime</title>
+    <title>เช่าสูทผู้ชาย</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
@@ -43,11 +49,11 @@ include('../server.php');
 
 <!-- <header class="p-3 text-bg-info"> -->
   <?php
-    if($login==0){
+    if(!isset($_SESSION['username'])):
   ?>
     <header class="navbar navbar-expand-lg navbar-light bg-info">
         <div class="container px-4 px-lg-5">
-            <a class="navbar-brand" href="../index.php">Start Bootstrap</a>
+            <a class="navbar-brand" href="../index.php">เช่าสูทผู้ชาย</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button> 
@@ -55,9 +61,6 @@ include('../server.php');
               <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
                 <li class="nav-item">
                   <a class="nav-link active" aria-current="page" href="../index.php">หน้าแรก</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">เกี่ยวกับ</a>
                 </li>
               </ul>
 
@@ -97,14 +100,14 @@ include('../server.php');
       </div>
     </header>
   <?php
-    }
+    endif
   ?>
   <?php
-    if($login==1){
+    if(isset($_SESSION['username'])):
   ?>
     <header class="navbar navbar-expand-lg navbar-light bg-info">
       <div class="container px-4 px-lg-5">
-          <a class="navbar-brand" href="../index.php">Start Bootstrap</a>
+          <a class="navbar-brand" href="../index.php">เช่าสูทผู้ชาย</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button> 
@@ -112,9 +115,6 @@ include('../server.php');
               <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
                 <li class="nav-item">
                   <a class="nav-link active" aria-current="page" href="../index.php">หน้าแรก</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">เกี่ยวกับ</a>
                 </li>
               </ul>
 
@@ -147,12 +147,12 @@ include('../server.php');
                 <div class="text-end">
                     <div class="dropdown">
                         <button class="btn btn-outline-dark dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                            username
+                          <span id="username">username</span> 
                         </button>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                             <li><a class="dropdown-item" href="../profile/profile.php">บัญชีของฉัน</a></li>
                             <li><a class="dropdown-item" href="#">ประวัติการเช่า</a></li>
-                            <li><a class="dropdown-item" href="#">ออกจากระบบ</a></li>
+                            <li><a class="dropdown-item" href="../index.php?loguut='1'">ออกจากระบบ</a></li>
                         </ul>
                     </div>
                 </div>
@@ -162,15 +162,15 @@ include('../server.php');
     </div>
   </header>
   <?php
-    }
+    endif
   ?>
     <section class="order-history-wrapper pt-90 pb-100">
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-lg-9">
             <div class="history-title">
-              <h4 class="heading-4 font-weight-500 title">Order History</h4>
-              <p class="paragraph-small">Your all the orders</p>
+              <h4 class="heading-4 font-weight-500 title">ประวัติการสั่งซื้อ</h4>
+              <p class="paragraph-small">ออเดอร์ทั้งหมดของคุณ</p>
             </div>
           </div>
         </div>
@@ -182,17 +182,13 @@ include('../server.php');
             <div class="single-order">
             <a class="product" href="order-item.php"><h4 class="order-id">Order ID: 1234567890</h4></a>
               <ul class="order-meta">
-                <li><a class="product" href="order-item.php">4 Product</a></li>
+                <li><a class="product" href="order-item.php"><span id="product">4 &nbsp;</span>Product</a></li>
                 <li><a class="date" href="#0">02/23/2020, 5:00PM</a></li>
               </ul>
               <div class="single-progress-bar-horizontal shipped">
+                สถานะสินค้า:
                 <div class="progress-text">
-                  <p>Shipped</p>
-                </div>
-                <div class="progress-bar-inner">
-                  <div class="bar-inner">
-                    <div class="progress-horizontal"></div>
-                  </div>
+                  <p><span id="status"> </span></p>
                 </div>
               </div>
               <span class="order-price">$144.50</span>
@@ -204,4 +200,5 @@ include('../server.php');
         ?>
       </div>
     </section>
+    <script src="../js/scripts.js"></script>
 </body>
