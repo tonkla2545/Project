@@ -1,6 +1,6 @@
 <?php
 
-  session_start();
+  include('server.php');
   // include('Data/data.php');
   // // $sql ="INSERT INTO user(user_name, email, date) VALUES(:user_name, :email, :date)";
   // // $query = $dbcon->prepare($sql);
@@ -22,12 +22,6 @@
   //       echo $res->date."<br>";
   //     }
   // }
-
-  if (isset($_GET['logout'])) {
-    session_destroy();
-    unset($_SESSION['username']);
-    header('location: login.php');
-  }
 
 ?>
 <!DOCTYPE html>

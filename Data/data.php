@@ -1,15 +1,20 @@
 <?php
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "dbstord";
 
-    $servername = "localhost";
-    $username = "root";
-    $userpass = "";
-    $dbname = "dataproject";
-    
-    try {
-        $dbcon = new PDO("mysql:host=$servername; dbname=$dbname", $username, $userpass);
-        $dbcon->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    } catch(PDOException $e) {
-        echo "Faild to connect to database ". $e->getMessage();
+try {
+  $conn = new PDO("mysql:host=$servername", $username, $password);
+  // set the PDO error mode to exception
+  $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+  $sql = "CREATE DATABASE dbstord";
+  // use exec() because no results are returned
+  $conn->exec($sql);
+  echo "Database created successfully<br>";
+} catch(PDOException $e) {
+  echo $sql . "<br>" . $e->getMessage();
+}
 
-    }
+$conn = null;
 ?>
