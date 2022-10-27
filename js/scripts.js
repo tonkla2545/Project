@@ -95,16 +95,16 @@ const Discount = (member) =>{
     
     member = 'silver'
     if(member == 'silver'){
-        discount.innerHTML = parseFloat(product_price_total.innerHTML) * 0.3;
-        price_total.innerHTML = parseFloat(price_total.innerHTML ) - parseFloat(discount);
+        discount.innerHTML = parseFloat(product_price_total.innerHTML) * 0.03;
+        price_total.innerHTML = parseFloat(price_total.innerHTML ) - parseFloat(discount.innerHTML);
     }
     else if(member == 'gold'){
-        discount.innerHTML = parseFloat(product_price_total.innerHTML) * 0.6;
-        price_total.innerHTML = parseFloat(price_total.innerHTML ) - parseFloat(discount);
+        discount.innerHTML = parseFloat(product_price_total.innerHTML) * 0.06;
+        price_total.innerHTML = parseFloat(price_total.innerHTML ) - parseFloat(discount.innerHTML);
     }
     else if(member == 'premium'){
-        discount.innerHTML = parseFloat(product_price_total.innerHTML) * 1.0;
-        price_total.innerHTML = parseFloat(price_total.innerHTML ) - parseFloat(discount);
+        discount.innerHTML = parseFloat(product_price_total.innerHTML) * 0.10;
+        price_total.innerHTML = parseFloat(price_total.innerHTML ) - parseFloat(discount.innerHTML);
     }
 
 }
