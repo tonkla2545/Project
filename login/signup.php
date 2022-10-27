@@ -45,7 +45,7 @@
 
                                     <h3 class="mb-5">สมัครสมาชิก</h3>
                                     <form action="signup_db.php" method="post">
-                                        <?php include('errors.php');?>
+                                        <?php include('../error.php');?>
                                         <?php if(isset($_SESSION['error'])):?>
                                             <div class="error">
                                                 <h3>

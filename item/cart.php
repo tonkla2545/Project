@@ -188,7 +188,7 @@ $member = 'silver';
                       <td>
                         <div class="product-cart d-flex">
                           <div class="product-thumb">
-                            <img src="assets/images/product-cart/product-1.png" alt="Product">
+                            <img src=" " alt="Product">
                           </div>
                           <div class="product-content media-body">
                             <h5 class="title"><a href="#0">Hollow Port</a></h5>
@@ -266,5 +266,6 @@ $member = 'silver';
       </div>
     </section>
     <script src="../js/scripts.js"></script>
+
 </body>
 </html>
