@@ -105,7 +105,6 @@
                           <span id="username"><?php echo $_SESSION['email']?></span> 
                         </button>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                            <li><a class="dropdown-item" href="../profile/profile.php">บัญชีของฉัน</a></li>
                             <li><a class="dropdown-item" href="../order/order-h.php">ประวัติการเช่า</a></li>
                             <li><a class="dropdown-item" href="../index.php?logout='1'">ออกจากระบบ</a></li>
                         </ul>
@@ -159,7 +158,9 @@
                 </div>
                 <div class="single-form form-default">
                   <button class="main-btn primary-btn"> ชำละเงิน</button>
+                  <button class="main-btn primary-btn" onclick="Discount('discount')">ส่วนลด</button>
                 </div>
+                
               </div>
             </div>
           </div>
@@ -173,6 +174,7 @@
 
                   <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
                     <div class="card-body">
+                      <form action="process-item.php" method="post"></form>
                       <div class="checkout-table table-responsive">
                         <table class="table">
                           <tbody>
@@ -284,37 +286,6 @@
                             <p class="value">ราคารวมทั้งหมด:</p>
                             <p class="price">$164.50</p>
                           </div>
-                        </div>
-
-                        <div class="price-table-btn">
-                          <a href="cart.php" class="main-btn primary-btn-border">แก้ไขตะกร้าสินค้า</a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="card">
-                  <div class="card-header" id="headingTwo">
-                    <a href="javascript:void(0)" class="collapsed" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">ข้อมูลส่วนตัว</a>
-                  </div>
-                  <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
-                    <div class="card-body">
-                      <div class="checkout-sidebar-details">
-                        <div class="single-details">
-                          <p class="info">Jhone Doe</p>
-                          <p class="info">doejhon@email.com</p>
-                          <p class="info">+123 456 789 0234</p>
-                        </div>
-                        <div class="single-details">
-                          <h6 class="title">Mailing Address</h6>
-                          <p class="info">
-                            Company Inc., 8901 Marmora Road, <br>
-                            Glasgow, D04 89GR.
-                          </p>
-                        </div>
-                        <div class="details-btn">
-                          <a href="../profile/profile-edit.php" class="main-btn primary-btn-border">แก้ไขข้อมูล</a>
                         </div>
                       </div>
                     </div>

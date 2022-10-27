@@ -9,6 +9,9 @@
     header('location: login.php');
   }
 
+  $query = mysqli_query($dbcon,"SELECT * FROM user_detail");
+  $result = mysqli_fetch_array($query);
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -84,7 +87,7 @@
   ?>
     <header class="navbar navbar-expand-lg navbar-light bg-info">
       <div class="container px-4 px-lg-5">
-          <a class="navbar-brand" href="index.php">เช่าสูทผู้ชาย</a>
+          <a class="navbar-brand" href="../index.php">เช่าสูทผู้ชาย</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button> 
@@ -146,65 +149,58 @@
             </ul>
         </div>
 				</div>
-				<div class="col-lg-9">
-					<div class="card mb-3">
-						<div class="card-body">
-							<div class="row mb-4">
-								<div class="col-sm-3">
-									<h6 class="mb-0">ชื่อ</h6>
-								</div>
-								<div class="col-sm-9 text-secondary">
-									<input type="text" class="form-control" value="John Doe" id="name">
-								</div>
-							</div>
-							<div class="row mb-4">
-								<div class="col-sm-3">
-									<h6 class="mb-0">Email</h6>
-								</div>
-								<div class="col-sm-9 text-secondary">
-									<input type="text" class="form-control" value="john@example.com" id="email">
-								</div>
-							</div>
-							<div class="row mb-4">
-								<div class="col-sm-3">
-									<h6 class="mb-0">เบอร์โทรศัพท์</h6>
-								</div>
-								<div class="col-sm-9 text-secondary">
-									<input type="text" class="form-control" value="012-3456789" id="phoneNum">
-								</div>
-							</div>
-                            <!-- row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content -->
-							<div class="row row-cols-2 row-cols-md-3 row-cols-xl-4 mb-4">
-								<div class="col-sm-4">
-									<h6 class="mb-0">เพศ</h6>
-								</div>
-								<div class="col-sm-9 text-secondary">
-									<input type="radio" name="gender" id="gender"> เพศชาย
-								</div>
-                                <div class="col-sm-9 text-secondary">
-									<input type="radio" name="gender" id="gender"> เพศหญิง
-								</div>
-                                <div class="col-sm-9 text-secondary">
-									<input type="radio" name="gender" id="gender"> อื่นๆ
-								</div>
-							</div>
-							<div class="row mb-3">
-								<div class="col-sm-3">
-									<h6 class="mb-0">วัน/เดือน/ปีเกิด</h6>
-								</div>
-								<div class="col-sm-9 text-secondary">
-									<input type="date" name="date">
-								</div>
-							</div>
-							<div class="row">
-								<div class="col-sm-3"></div>
-								<div class="col-sm-9 text-secondary">
-                  <a class="btn " href="profile.php"><input type="button" class="btn btn-primary px-4" value="Save Changes" id="saveChange"></a>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
+        <div class="col-lg-9">
+          <div class="card mb-3">
+            <form action="process.php" method="post">
+              <div class="card-body">
+                <div class="row mb-4">
+                  <div class="col-sm-3">
+                    <h6 class="mb-0">ชื่อ</h6>
+                  </div>
+                  <div class="col-sm-9 text-secondary">
+                    <input type="text" class="form-control" value="John Doe" id="username" name="username">
+                  </div>
+                </div>
+                <div class="row mb-4">
+                  <div class="col-sm-3">
+                    <h6 class="mb-0">เบอร์โทรศัพท์</h6>
+                  </div>
+                  <div class="col-sm-9 text-secondary">
+                    <input type="text" class="form-control" value="012-3456789" id="phoneNum" name="tel">
+                  </div>
+                </div>
+                <div class="row row-cols-2 row-cols-md-3 row-cols-xl-4 mb-4">
+                  <div class="col-sm-4">
+                    <h6 class="mb-0">เพศ</h6>
+                  </div>
+                  <div class="col-sm-9 text-secondary">
+                    <input type="radio" name="gender" id="gender"> เพศชาย
+                  </div>
+                  <div class="col-sm-9 text-secondary">
+                    <input type="radio" name="gender" id="gender"> เพศหญิง
+                  </div>
+                  <div class="col-sm-9 text-secondary">
+                    <input type="radio" name="gender" id="gender"> อื่นๆ
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <div class="col-sm-3">
+                    <h6 class="mb-0">วัน/เดือน/ปีเกิด</h6>
+                  </div>
+                  <div class="col-sm-9 text-secondary">
+                    <input type="date" name="datebirthday">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-3"></div>
+                  <div class="col-sm-9 text-secondary">
+                    <input type="submit" class="btn btn-primary px-4" value="บันทึกข้อมูล" id="saveChange" name="saveChange">
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
 			</div>
 		</div>
 	</div>

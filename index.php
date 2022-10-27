@@ -30,6 +30,8 @@
     header('location: login/login.php');
   }
 
+  $num_rows = mysqli_num_rows(mysqli_query($dbcon,"SELECT * FROM product"));
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -124,7 +126,6 @@
                           <span id="username"><?php echo $_SESSION['email']?></span> 
                         </button>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                            <li><a class="dropdown-item" href="profile/profile.php">บัญชีของฉัน</a></li>
                             <li><a class="dropdown-item" href="order/order-h.php">ประวัติการเช่า</a></li>
                             <li><a class="dropdown-item" href="index.php?logout='1'">ออกจากระบบ</a></li>
                         </ul>
@@ -139,44 +140,30 @@
     endif
   ?>
 
-<!-- ตะกร้า -->
-  <div class="container px-4 px-lg-5 mt-5 ">
-      <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-        <a href="item/cart.php">
-          <button class="btn btn-outline-dark" type="submit">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart-fill" viewBox="0 0 16 16">
-              <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
-            </svg>ตะกร้า
-            <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
-          </button>
-        </a>
-      </div>
-  </div>
   <!-- หน้าสินค้า -->
   <section class="py-5">
       <div class="container px-4 px-lg-5 mt-1">
           <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content">
-              <?php 
-                for($i=1;$i<=16;$i++){
+              <?php   
+                $query = mysqli_query($dbcon,"SELECT * FROM product");       
+                while($result = mysqli_fetch_array($query)){
               ?>
               <div class="col mb-5">
                   <div class="card h-100">
-                      <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>
                       <!-- Product image-->
-                        <a href="item/shop-item.php"><img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." /></a>
+                        <a href="item/shop-item.php?id=<?=$result['Pid']?>"><img class="card-img-top" src="<?=$result['Pimage']?>" alt="..." /></a>
                       <!-- Product details-->
                       <div class="card-body p-4">
                           <div class="text-center">
                               <!-- Product name-->
-                              <h5 class="fw-bolder">Special Item</h5>
+                              <p class="fw-bolder"><?=$result['Pname']?></p>
                               <!-- Product price-->
-                              <span class="text-muted text-decoration-line-through">$20.00</span>
-                              $18.00
+                              <span class="fw-bolder "><?=$result['Pprice']?>&nbsp;บาท</span>
                           </div>
                       </div>
                       <!-- Product actions-->
                       <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                          <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="item/shop-item.php">ดูสินค้า</a></div>
+                          <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="item/shop-item.php?id=<?=$result['Pid']?>">ดูสินค้า</a></div>
                       </div>
                   </div>
               </div>
@@ -184,15 +171,7 @@
               }
               ?>
           </div>
-    
-          <div class="btn-toolbar text-right" role="toolbar" aria-label="Toolbar with button groups">
-              <div class="btn-group me-2 ms-auto" role="group" aria-label="First group">
-                  <button type="button" class="btn btn-primary">1</button>
-                  <button type="button" class="btn btn-primary">2</button>
-                  <button type="button" class="btn btn-primary">3</button>
-                  <button type="button" class="btn btn-primary">4</button>
-              </div>
-          </div>
+  
       </div>
   </section>
 
