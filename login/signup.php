@@ -1,7 +1,7 @@
 <?php
 
     session_start();
-    include('../Data/data.php');
+    // include('../Data/data.php');
 
 ?>
 <!DOCTYPE html>
