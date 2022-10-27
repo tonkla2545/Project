@@ -65,30 +65,7 @@ if (isset($_GET['logout'])) {
                 </li>
               </ul>
 
-                <section class="w-50 p-1 pb-1 d-flex justify-content-center align-items-center flex-column me-lg-auto mb-2 justify-content-center mb-md-0">
-                <!-- <form class="nav col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3 me-lg-auto mb-2 justify-content-center mb-md-0" role="search"> -->
-                    <form class="input-group " role="search">
-                    <input type="search" class="form-control form-control-white text-bg-white " placeholder="Search..." aria-label="Search">
-                    <button type="button" class="btn btn-primary">
-                        <svg height="19" viewBox="0 0 19 19" width="19" class="">
-                        <g fill-rule="evenodd" stroke="none" stroke-width="1">
-                            <g transform="translate(-1016 -32)">
-                            <g>
-                                <g transform="translate(405 21)">
-                                <g transform="translate(611 11)">
-                                    <path d="m8 16c4.418278 0 8-3.581722 8-8s-3.581722-8-8-8-8 3.581722-8 8 3.581722 8 8 8zm0-2c-3.3137085 0-6-2.6862915-6-6s2.6862915-6 6-6 6 2.6862915 6 6-2.6862915 6-6 6z">
-                                    </path>
-                                    <path d="m12.2972351 13.7114222 4.9799555 4.919354c.3929077.3881263 1.0260608.3842503 1.4141871-.0086574.3881263-.3929076.3842503-1.0260607-.0086574-1.414187l-4.9799554-4.919354c-.3929077-.3881263-1.0260608-.3842503-1.4141871.0086573-.3881263.3929077-.3842503 1.0260608.0086573 1.4141871z">
-                                    </path>
-                                </g>
-                                </g>
-                            </g>
-                            </g>
-                        </g>
-                        </svg>
-                    </button>
-                    </form>
-                </section>
+                
 
                 <div class="d-grid gap-2 d-md-flex">
                   <div class="text-end">
@@ -119,30 +96,7 @@ if (isset($_GET['logout'])) {
                 </li>
               </ul>
 
-              <section class="w-50 p-1 pb-1 d-flex justify-content-center align-items-center flex-column me-lg-auto mb-2 justify-content-center mb-md-0">
-
-                  <form class="input-group " role="search">
-                  <input type="search" class="form-control form-control-white text-bg-white " placeholder="Search..." aria-label="Search">
-                  <button type="button" class="btn btn-primary">
-                      <svg height="19" viewBox="0 0 19 19" width="19" class="">
-                      <g fill-rule="evenodd" stroke="none" stroke-width="1">
-                          <g transform="translate(-1016 -32)">
-                          <g>
-                              <g transform="translate(405 21)">
-                              <g transform="translate(611 11)">
-                                  <path d="m8 16c4.418278 0 8-3.581722 8-8s-3.581722-8-8-8-8 3.581722-8 8 3.581722 8 8 8zm0-2c-3.3137085 0-6-2.6862915-6-6s2.6862915-6 6-6 6 2.6862915 6 6-2.6862915 6-6 6z">
-                                  </path>
-                                  <path d="m12.2972351 13.7114222 4.9799555 4.919354c.3929077.3881263 1.0260608.3842503 1.4141871-.0086574.3881263-.3929076.3842503-1.0260607-.0086574-1.414187l-4.9799554-4.919354c-.3929077-.3881263-1.0260608-.3842503-1.4141871.0086573-.3881263.3929077-.3842503 1.0260608.0086573 1.4141871z">
-                                  </path>
-                              </g>
-                              </g>
-                          </g>
-                          </g>
-                      </g>
-                      </svg>
-                  </button>
-                  </form>
-              </section>
+              
 
               <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                 <div class="text-end">
