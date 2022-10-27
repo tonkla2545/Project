@@ -1,11 +1,7 @@
 <?php
 
   include('server.php');
-
-  include('data/data.php');
-
   
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
