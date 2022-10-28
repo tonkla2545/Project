@@ -182,7 +182,7 @@
                               <td class="checkout-product">
                                 <div class="product-cart d-flex">
                                   <div class="product-thumb">
-                                    <img src="assets/images/product-cart/product-1.png" alt="Product">
+                                    <img src="<?=$result['Pimage']?>" alt="Product">
                                   </div>
                                   <div class="product-content media-body">
                                     <h5 class="title">

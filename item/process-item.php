@@ -10,16 +10,13 @@
 
     if(isset($_POST['rent_goods'])){
         header("location: payment.php");
-        if($result['Pid' == $id]){
 
-            $price = mysqli_real_escape_string($dbcon,$result['Pprice']);
-            $oquantity = mysqli_real_escape_string($dbcon,$_POST['quantity']);
-            $date = mysqli_real_escape_string($dbcon,.getDate());
+        $price = mysqli_real_escape_string($dbcon,$result['Pprice']);
+        $oquantity = mysqli_real_escape_string($dbcon,$_POST['quantity']);
+        $date = mysqli_real_escape_string($dbcon,.getDate());
 
-
-
-            
-        }
+        $sql = "INSERT INTO order_detail (Pid, Oquantity, Odate) VALUES ('$id','$oquantity','$date')";
+        mysqli_query($dbcon,$sql);
         
     }
 
